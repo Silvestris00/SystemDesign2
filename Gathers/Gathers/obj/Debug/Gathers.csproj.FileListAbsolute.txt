@@ -1,0 +1,8 @@
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\bin\Debug\Gathers.exe.config
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\bin\Debug\Gathers.exe
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\bin\Debug\Gathers.pdb
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.Properties.Resources.resources
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.csproj.GenerateResource.Cache
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.exe
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.pdb
+c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
