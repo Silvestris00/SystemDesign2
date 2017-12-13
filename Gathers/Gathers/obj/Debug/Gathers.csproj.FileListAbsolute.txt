@@ -6,3 +6,12 @@ c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Ga
 c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.exe
 c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.pdb
 c:\users\joho\documents\visual studio 2015\Projects\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.exe.config
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.exe
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.pdb
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.exe
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.pdb
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csprojResolveAssemblyReference.cache
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.Properties.Resources.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csproj.GenerateResource.Cache
