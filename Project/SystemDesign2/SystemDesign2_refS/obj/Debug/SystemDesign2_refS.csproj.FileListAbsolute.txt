@@ -1,0 +1,9 @@
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\bin\Debug\SystemDesign2_refS.exe.config
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\bin\Debug\SystemDesign2_refS.exe
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\bin\Debug\SystemDesign2_refS.pdb
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\obj\Debug\SystemDesign2_refS.csprojResolveAssemblyReference.cache
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\obj\Debug\SystemDesign2_refS.refS.resources
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\obj\Debug\SystemDesign2_refS.Properties.Resources.resources
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\obj\Debug\SystemDesign2_refS.csproj.GenerateResource.Cache
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\obj\Debug\SystemDesign2_refS.exe
+C:\Users\Made in\Desktop\SystemDesign2_refS\SystemDesign2_refS\obj\Debug\SystemDesign2_refS.pdb
