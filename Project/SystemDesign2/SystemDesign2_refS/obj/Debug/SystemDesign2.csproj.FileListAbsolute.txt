@@ -16,3 +16,12 @@ C:\Users\Made in\Desktop\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign
 C:\Users\Made in\Desktop\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2_gathers.gathers.resources
 C:\Users\Made in\Desktop\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.Properties.Resources.resources
 C:\Users\Made in\Desktop\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.csproj.GenerateResource.Cache
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\bin\Debug\SystemDesign2.exe.config
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.exe
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.pdb
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\bin\Debug\SystemDesign2.exe
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\bin\Debug\SystemDesign2.pdb
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.csprojResolveAssemblyReference.cache
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2_gathers.gathers.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.Properties.Resources.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.csproj.GenerateResource.Cache

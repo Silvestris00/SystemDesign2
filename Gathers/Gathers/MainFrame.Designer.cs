@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
-            this.reference = new System.Windows.Forms.TabPage();
             this.Q_and_A = new System.Windows.Forms.TabPage();
             this.Question = new System.Windows.Forms.TabPage();
             this.SourceCode = new System.Windows.Forms.TabPage();
@@ -41,36 +40,37 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.MainTab = new System.Windows.Forms.TabControl();
+            this.reference = new System.Windows.Forms.TabPage();
+            this.search_box = new System.Windows.Forms.TextBox();
+            this.create_own_ref = new System.Windows.Forms.CheckBox();
+            this.create_new_ref = new System.Windows.Forms.Button();
+            this.ref_share_list = new System.Windows.Forms.ListView();
+            this.ref_share_label = new System.Windows.Forms.Label();
             this.CorrectionEditor = new System.Windows.Forms.TabPage();
             this.Remove_CorrectionEditor = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.新規作成NToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.開くOToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.上書き保存SToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.印刷PToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.切り取りUToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.コピーCToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.貼り付けPToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ヘルプLToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.reference_create = new System.Windows.Forms.TabPage();
+            this.ref_inf_gbox = new System.Windows.Forms.GroupBox();
+            this.ref_genre_label = new System.Windows.Forms.Label();
+            this.ref_title_label = new System.Windows.Forms.Label();
+            this.ref_title_box = new System.Windows.Forms.TextBox();
+            this.ref_cancel_btn = new System.Windows.Forms.Button();
+            this.ref_upload_btn = new System.Windows.Forms.Button();
+            this.ref_save_btn = new System.Windows.Forms.Button();
+            this.ref_new_label = new System.Windows.Forms.Label();
+            this.ref_body_box = new System.Windows.Forms.TextBox();
+            this.mainnotify = new System.Windows.Forms.NotifyIcon(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.MainTab.SuspendLayout();
+            this.reference.SuspendLayout();
             this.CorrectionEditor.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.reference_create.SuspendLayout();
+            this.ref_inf_gbox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // reference
-            // 
-            this.reference.BackColor = System.Drawing.Color.White;
-            this.reference.Location = new System.Drawing.Point(4, 22);
-            this.reference.Name = "reference";
-            this.reference.Padding = new System.Windows.Forms.Padding(3);
-            this.reference.Size = new System.Drawing.Size(858, 474);
-            this.reference.TabIndex = 3;
-            this.reference.Text = "リファレンス共有";
             // 
             // Q_and_A
             // 
@@ -78,7 +78,7 @@
             this.Q_and_A.Location = new System.Drawing.Point(4, 22);
             this.Q_and_A.Name = "Q_and_A";
             this.Q_and_A.Padding = new System.Windows.Forms.Padding(3);
-            this.Q_and_A.Size = new System.Drawing.Size(858, 474);
+            this.Q_and_A.Size = new System.Drawing.Size(858, 536);
             this.Q_and_A.TabIndex = 2;
             this.Q_and_A.Text = "質問スレ";
             // 
@@ -88,7 +88,7 @@
             this.Question.Location = new System.Drawing.Point(4, 22);
             this.Question.Name = "Question";
             this.Question.Padding = new System.Windows.Forms.Padding(3);
-            this.Question.Size = new System.Drawing.Size(858, 474);
+            this.Question.Size = new System.Drawing.Size(858, 536);
             this.Question.TabIndex = 1;
             this.Question.Text = "Gathers道場";
             // 
@@ -98,7 +98,7 @@
             this.SourceCode.Location = new System.Drawing.Point(4, 22);
             this.SourceCode.Name = "SourceCode";
             this.SourceCode.Padding = new System.Windows.Forms.Padding(3);
-            this.SourceCode.Size = new System.Drawing.Size(858, 474);
+            this.SourceCode.Size = new System.Drawing.Size(858, 536);
             this.SourceCode.TabIndex = 0;
             this.SourceCode.Text = "ソースコード共有";
             // 
@@ -110,7 +110,7 @@
             this.MainPage.Location = new System.Drawing.Point(4, 22);
             this.MainPage.Name = "MainPage";
             this.MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainPage.Size = new System.Drawing.Size(858, 474);
+            this.MainPage.Size = new System.Drawing.Size(858, 536);
             this.MainPage.TabIndex = 5;
             this.MainPage.Text = "メインページ";
             // 
@@ -186,15 +186,78 @@
             // 
             this.MainTab.Controls.Add(this.MainPage);
             this.MainTab.Controls.Add(this.SourceCode);
+            this.MainTab.Controls.Add(this.reference);
             this.MainTab.Controls.Add(this.Question);
             this.MainTab.Controls.Add(this.Q_and_A);
-            this.MainTab.Controls.Add(this.reference);
             this.MainTab.Controls.Add(this.CorrectionEditor);
+            this.MainTab.Controls.Add(this.reference_create);
             this.MainTab.Location = new System.Drawing.Point(1, 28);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
-            this.MainTab.Size = new System.Drawing.Size(866, 500);
+            this.MainTab.Size = new System.Drawing.Size(866, 562);
             this.MainTab.TabIndex = 0;
+            // 
+            // reference
+            // 
+            this.reference.Controls.Add(this.search_box);
+            this.reference.Controls.Add(this.create_own_ref);
+            this.reference.Controls.Add(this.create_new_ref);
+            this.reference.Controls.Add(this.ref_share_list);
+            this.reference.Controls.Add(this.ref_share_label);
+            this.reference.Location = new System.Drawing.Point(4, 22);
+            this.reference.Name = "reference";
+            this.reference.Padding = new System.Windows.Forms.Padding(3);
+            this.reference.Size = new System.Drawing.Size(858, 536);
+            this.reference.TabIndex = 8;
+            this.reference.Text = "リファレンス共有";
+            this.reference.UseVisualStyleBackColor = true;
+            // 
+            // search_box
+            // 
+            this.search_box.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.search_box.Location = new System.Drawing.Point(522, 36);
+            this.search_box.Name = "search_box";
+            this.search_box.Size = new System.Drawing.Size(228, 19);
+            this.search_box.TabIndex = 5;
+            this.search_box.Text = "リファレンスを検索する";
+            // 
+            // create_own_ref
+            // 
+            this.create_own_ref.AutoSize = true;
+            this.create_own_ref.Location = new System.Drawing.Point(311, 40);
+            this.create_own_ref.Name = "create_own_ref";
+            this.create_own_ref.Size = new System.Drawing.Size(203, 16);
+            this.create_own_ref.TabIndex = 4;
+            this.create_own_ref.Text = "自分で作成したリファレンスのみを表示";
+            this.create_own_ref.UseVisualStyleBackColor = true;
+            // 
+            // create_new_ref
+            // 
+            this.create_new_ref.Location = new System.Drawing.Point(198, 34);
+            this.create_new_ref.Name = "create_new_ref";
+            this.create_new_ref.Size = new System.Drawing.Size(96, 30);
+            this.create_new_ref.TabIndex = 3;
+            this.create_new_ref.Text = "新規作成";
+            this.create_new_ref.UseVisualStyleBackColor = true;
+            this.create_new_ref.Click += new System.EventHandler(this.create_new_ref_Click);
+            // 
+            // ref_share_list
+            // 
+            this.ref_share_list.Location = new System.Drawing.Point(21, 74);
+            this.ref_share_list.Name = "ref_share_list";
+            this.ref_share_list.Size = new System.Drawing.Size(729, 408);
+            this.ref_share_list.TabIndex = 2;
+            this.ref_share_list.UseCompatibleStateImageBehavior = false;
+            // 
+            // ref_share_label
+            // 
+            this.ref_share_label.AutoSize = true;
+            this.ref_share_label.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.ref_share_label.Location = new System.Drawing.Point(18, 40);
+            this.ref_share_label.Name = "ref_share_label";
+            this.ref_share_label.Size = new System.Drawing.Size(167, 16);
+            this.ref_share_label.TabIndex = 1;
+            this.ref_share_label.Text = "共有しているリファレンス";
             // 
             // CorrectionEditor
             // 
@@ -203,7 +266,7 @@
             this.CorrectionEditor.Location = new System.Drawing.Point(4, 22);
             this.CorrectionEditor.Name = "CorrectionEditor";
             this.CorrectionEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.CorrectionEditor.Size = new System.Drawing.Size(858, 474);
+            this.CorrectionEditor.Size = new System.Drawing.Size(858, 536);
             this.CorrectionEditor.TabIndex = 6;
             this.CorrectionEditor.Text = "添削エディタ";
             // 
@@ -217,118 +280,141 @@
             this.Remove_CorrectionEditor.UseVisualStyleBackColor = true;
             this.Remove_CorrectionEditor.Click += new System.EventHandler(this.Remove_CorrectionEditor_Click);
             // 
-            // notifyIcon1
+            // reference_create
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            this.reference_create.Controls.Add(this.ref_inf_gbox);
+            this.reference_create.Controls.Add(this.ref_cancel_btn);
+            this.reference_create.Controls.Add(this.ref_upload_btn);
+            this.reference_create.Controls.Add(this.ref_save_btn);
+            this.reference_create.Controls.Add(this.ref_new_label);
+            this.reference_create.Controls.Add(this.ref_body_box);
+            this.reference_create.Location = new System.Drawing.Point(4, 22);
+            this.reference_create.Name = "reference_create";
+            this.reference_create.Padding = new System.Windows.Forms.Padding(3);
+            this.reference_create.Size = new System.Drawing.Size(858, 536);
+            this.reference_create.TabIndex = 7;
+            this.reference_create.Text = "リファレンスの新規作成";
+            this.reference_create.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
+            // ref_inf_gbox
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.新規作成NToolStripButton,
-            this.開くOToolStripButton,
-            this.上書き保存SToolStripButton,
-            this.印刷PToolStripButton,
-            this.toolStripSeparator,
-            this.切り取りUToolStripButton,
-            this.コピーCToolStripButton,
-            this.貼り付けPToolStripButton,
-            this.toolStripSeparator1,
-            this.ヘルプLToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(867, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
+            this.ref_inf_gbox.Controls.Add(this.ref_genre_label);
+            this.ref_inf_gbox.Controls.Add(this.ref_title_label);
+            this.ref_inf_gbox.Controls.Add(this.ref_title_box);
+            this.ref_inf_gbox.Location = new System.Drawing.Point(21, 353);
+            this.ref_inf_gbox.Name = "ref_inf_gbox";
+            this.ref_inf_gbox.Size = new System.Drawing.Size(729, 127);
+            this.ref_inf_gbox.TabIndex = 5;
+            this.ref_inf_gbox.TabStop = false;
+            this.ref_inf_gbox.Text = "リファレンス情報";
             // 
-            // 新規作成NToolStripButton
+            // ref_genre_label
             // 
-            this.新規作成NToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.新規作成NToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("新規作成NToolStripButton.Image")));
-            this.新規作成NToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.新規作成NToolStripButton.Name = "新規作成NToolStripButton";
-            this.新規作成NToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.新規作成NToolStripButton.Text = "新規作成(&N)";
+            this.ref_genre_label.AutoSize = true;
+            this.ref_genre_label.Location = new System.Drawing.Point(293, 31);
+            this.ref_genre_label.Name = "ref_genre_label";
+            this.ref_genre_label.Size = new System.Drawing.Size(48, 12);
+            this.ref_genre_label.TabIndex = 2;
+            this.ref_genre_label.Text = "ジャンル :";
             // 
-            // 開くOToolStripButton
+            // ref_title_label
             // 
-            this.開くOToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.開くOToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("開くOToolStripButton.Image")));
-            this.開くOToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.開くOToolStripButton.Name = "開くOToolStripButton";
-            this.開くOToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.開くOToolStripButton.Text = "開く(&O)";
+            this.ref_title_label.AutoSize = true;
+            this.ref_title_label.Location = new System.Drawing.Point(24, 31);
+            this.ref_title_label.Name = "ref_title_label";
+            this.ref_title_label.Size = new System.Drawing.Size(46, 12);
+            this.ref_title_label.TabIndex = 1;
+            this.ref_title_label.Text = "タイトル :";
             // 
-            // 上書き保存SToolStripButton
+            // ref_title_box
             // 
-            this.上書き保存SToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.上書き保存SToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("上書き保存SToolStripButton.Image")));
-            this.上書き保存SToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.上書き保存SToolStripButton.Name = "上書き保存SToolStripButton";
-            this.上書き保存SToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.上書き保存SToolStripButton.Text = "上書き保存(&S)";
+            this.ref_title_box.Location = new System.Drawing.Point(70, 28);
+            this.ref_title_box.Name = "ref_title_box";
+            this.ref_title_box.Size = new System.Drawing.Size(161, 19);
+            this.ref_title_box.TabIndex = 0;
             // 
-            // 印刷PToolStripButton
+            // ref_cancel_btn
             // 
-            this.印刷PToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.印刷PToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("印刷PToolStripButton.Image")));
-            this.印刷PToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.印刷PToolStripButton.Name = "印刷PToolStripButton";
-            this.印刷PToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.印刷PToolStripButton.Text = "印刷(&P)";
+            this.ref_cancel_btn.Location = new System.Drawing.Point(402, 34);
+            this.ref_cancel_btn.Name = "ref_cancel_btn";
+            this.ref_cancel_btn.Size = new System.Drawing.Size(96, 30);
+            this.ref_cancel_btn.TabIndex = 4;
+            this.ref_cancel_btn.Text = "キャンセル";
+            this.ref_cancel_btn.UseVisualStyleBackColor = true;
+            this.ref_cancel_btn.Click += new System.EventHandler(this.ref_cancel_btn_Click);
             // 
-            // toolStripSeparator
+            // ref_upload_btn
             // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.ref_upload_btn.Location = new System.Drawing.Point(198, 34);
+            this.ref_upload_btn.Name = "ref_upload_btn";
+            this.ref_upload_btn.Size = new System.Drawing.Size(96, 30);
+            this.ref_upload_btn.TabIndex = 3;
+            this.ref_upload_btn.Text = "保存/公開";
+            this.ref_upload_btn.UseVisualStyleBackColor = true;
             // 
-            // 切り取りUToolStripButton
+            // ref_save_btn
             // 
-            this.切り取りUToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.切り取りUToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("切り取りUToolStripButton.Image")));
-            this.切り取りUToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.切り取りUToolStripButton.Name = "切り取りUToolStripButton";
-            this.切り取りUToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.切り取りUToolStripButton.Text = "切り取り(&U)";
+            this.ref_save_btn.Location = new System.Drawing.Point(300, 34);
+            this.ref_save_btn.Name = "ref_save_btn";
+            this.ref_save_btn.Size = new System.Drawing.Size(96, 30);
+            this.ref_save_btn.TabIndex = 2;
+            this.ref_save_btn.Text = "下書きの保存";
+            this.ref_save_btn.UseVisualStyleBackColor = true;
             // 
-            // コピーCToolStripButton
+            // ref_new_label
             // 
-            this.コピーCToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.コピーCToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("コピーCToolStripButton.Image")));
-            this.コピーCToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.コピーCToolStripButton.Name = "コピーCToolStripButton";
-            this.コピーCToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.コピーCToolStripButton.Text = "コピー(&C)";
+            this.ref_new_label.AutoSize = true;
+            this.ref_new_label.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ref_new_label.Location = new System.Drawing.Point(21, 40);
+            this.ref_new_label.Name = "ref_new_label";
+            this.ref_new_label.Size = new System.Drawing.Size(161, 16);
+            this.ref_new_label.TabIndex = 1;
+            this.ref_new_label.Text = "リファレンスの新規作成";
             // 
-            // 貼り付けPToolStripButton
+            // ref_body_box
             // 
-            this.貼り付けPToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.貼り付けPToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("貼り付けPToolStripButton.Image")));
-            this.貼り付けPToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.貼り付けPToolStripButton.Name = "貼り付けPToolStripButton";
-            this.貼り付けPToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.貼り付けPToolStripButton.Text = "貼り付け(&P)";
+            this.ref_body_box.AllowDrop = true;
+            this.ref_body_box.Location = new System.Drawing.Point(21, 74);
+            this.ref_body_box.Multiline = true;
+            this.ref_body_box.Name = "ref_body_box";
+            this.ref_body_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ref_body_box.Size = new System.Drawing.Size(729, 258);
+            this.ref_body_box.TabIndex = 0;
             // 
-            // toolStripSeparator1
+            // mainnotify
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.mainnotify.Text = "通知";
+            this.mainnotify.Visible = true;
             // 
-            // ヘルプLToolStripButton
+            // menuStrip1
             // 
-            this.ヘルプLToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ヘルプLToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("ヘルプLToolStripButton.Image")));
-            this.ヘルプLToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ヘルプLToolStripButton.Name = "ヘルプLToolStripButton";
-            this.ヘルプLToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.ヘルプLToolStripButton.Text = "ヘルプ(&L)";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ファイルToolStripMenuItem,
+            this.ヘルプToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(867, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ファイルToolStripMenuItem
+            // 
+            this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
+            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ファイルToolStripMenuItem.Text = "ファイル";
+            // 
+            // ヘルプToolStripMenuItem
+            // 
+            this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
+            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.ヘルプToolStripMenuItem.Text = "ヘルプ";
             // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 461);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(867, 589);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.MainTab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFrame";
@@ -340,16 +426,21 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.MainTab.ResumeLayout(false);
+            this.reference.ResumeLayout(false);
+            this.reference.PerformLayout();
             this.CorrectionEditor.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.reference_create.ResumeLayout(false);
+            this.reference_create.PerformLayout();
+            this.ref_inf_gbox.ResumeLayout(false);
+            this.ref_inf_gbox.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TabPage reference;
         private System.Windows.Forms.TabPage Q_and_A;
         private System.Windows.Forms.TabPage Question;
         private System.Windows.Forms.TabPage SourceCode;
@@ -360,20 +451,28 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.NotifyIcon mainnotify;
         private System.Windows.Forms.TabPage CorrectionEditor;
         private System.Windows.Forms.Button Remove_CorrectionEditor;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton 新規作成NToolStripButton;
-        private System.Windows.Forms.ToolStripButton 開くOToolStripButton;
-        private System.Windows.Forms.ToolStripButton 上書き保存SToolStripButton;
-        private System.Windows.Forms.ToolStripButton 印刷PToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton 切り取りUToolStripButton;
-        private System.Windows.Forms.ToolStripButton コピーCToolStripButton;
-        private System.Windows.Forms.ToolStripButton 貼り付けPToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton ヘルプLToolStripButton;
+        private System.Windows.Forms.TabPage reference_create;
+        private System.Windows.Forms.GroupBox ref_inf_gbox;
+        private System.Windows.Forms.Label ref_genre_label;
+        private System.Windows.Forms.Label ref_title_label;
+        private System.Windows.Forms.TextBox ref_title_box;
+        private System.Windows.Forms.Button ref_cancel_btn;
+        private System.Windows.Forms.Button ref_upload_btn;
+        private System.Windows.Forms.Button ref_save_btn;
+        private System.Windows.Forms.Label ref_new_label;
+        private System.Windows.Forms.TextBox ref_body_box;
+        private System.Windows.Forms.TabPage reference;
+        private System.Windows.Forms.TextBox search_box;
+        private System.Windows.Forms.CheckBox create_own_ref;
+        private System.Windows.Forms.Button create_new_ref;
+        private System.Windows.Forms.ListView ref_share_list;
+        private System.Windows.Forms.Label ref_share_label;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
     }
 }
 

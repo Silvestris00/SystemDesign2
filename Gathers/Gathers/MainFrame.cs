@@ -36,6 +36,7 @@ namespace Gathers
             this.MainTab.SizeMode = TabSizeMode.Normal;
             this.Controls.Add(MainTab);
             this.MainTab.TabPages.Remove(CorrectionEditor);
+            this.MainTab.TabPages.Remove(reference_create);
         }
 
         private void Add_CorrectionEditor_Click(object sender, EventArgs e)
@@ -49,5 +50,16 @@ namespace Gathers
             this.MainTab.TabPages.Remove(CorrectionEditor);
         }
 
+        private void create_new_ref_Click(object sender, EventArgs e)
+        {
+            this.MainTab.TabPages.Add(reference_create);
+            this.MainTab.SelectTab(reference_create);
+        }
+
+        private void ref_cancel_btn_Click(object sender, EventArgs e)
+        {
+            this.MainTab.TabPages.Remove(reference_create);
+            this.MainTab.SelectTab(reference);
+        }
     }
 }
