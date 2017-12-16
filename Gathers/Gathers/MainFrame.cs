@@ -20,15 +20,6 @@ namespace Gathers
         {
             InitializeComponent();
 
-            this.MainTab.SizeMode = TabSizeMode.FillToRight;
-
-            this.MainTab.Multiline = true;
-            this.MainTab.Location = new Point(0, 25);
-            this.MainTab.Size = new Size(Display_Width, Display_Height);
-            this.MainTab.SizeMode = TabSizeMode.Normal;
-
-            this.Size = new Size(300, 300);
-            this.Controls.Add(MainTab);
 
         }
 
@@ -38,6 +29,25 @@ namespace Gathers
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MainTab.SizeMode = TabSizeMode.FillToRight;
+            this.MainTab.Multiline = true;
+            this.MainTab.Location = new Point(0, 30);
+            this.MainTab.Size = new Size(Display_Width, Display_Height);
+            this.MainTab.SizeMode = TabSizeMode.Normal;
+            this.Controls.Add(MainTab);
+            this.MainTab.TabPages.Remove(CorrectionEditor);
         }
+
+        private void Add_CorrectionEditor_Click(object sender, EventArgs e)
+        {
+            this.MainTab.TabPages.Add(CorrectionEditor);
+            this.MainTab.SelectTab(CorrectionEditor);
+        }
+ 
+        private void Remove_CorrectionEditor_Click(object sender, EventArgs e)
+        {
+            this.MainTab.TabPages.Remove(CorrectionEditor);
+        }
+
     }
 }
