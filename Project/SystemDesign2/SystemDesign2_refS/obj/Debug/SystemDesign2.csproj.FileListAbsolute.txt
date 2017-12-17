@@ -25,3 +25,6 @@ C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDe
 C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2_gathers.gathers.resources
 C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.Properties.Resources.resources
 C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.csproj.GenerateResource.Cache
+C:\NIT-AC\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\bin\Debug\SystemDesign2.exe.config
+C:\NIT-AC\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.exe
+C:\NIT-AC\SystemDesign2\Project\SystemDesign2\SystemDesign2_refS\obj\Debug\SystemDesign2.pdb

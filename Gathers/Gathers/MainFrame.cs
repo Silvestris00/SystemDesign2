@@ -49,17 +49,5 @@ namespace Gathers
         {
             this.MainTab.TabPages.Remove(CorrectionEditor);
         }
-
-        private void create_new_ref_Click(object sender, EventArgs e)
-        {
-            this.MainTab.TabPages.Add(reference_create);
-            this.MainTab.SelectTab(reference_create);
-        }
-
-        private void ref_cancel_btn_Click(object sender, EventArgs e)
-        {
-            this.MainTab.TabPages.Remove(reference_create);
-            this.MainTab.SelectTab(reference);
-        }
     }
 }

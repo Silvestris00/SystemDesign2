@@ -15,3 +15,12 @@ C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gath
 C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
 C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.Properties.Resources.resources
 C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csproj.GenerateResource.Cache
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.exe.config
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.exe
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.pdb
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.exe
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.pdb
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csprojResolveAssemblyReference.cache
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.Properties.Resources.resources
+C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csproj.GenerateResource.Cache
