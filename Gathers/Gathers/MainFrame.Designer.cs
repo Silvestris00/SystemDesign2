@@ -48,7 +48,7 @@
             this.Question_search = new System.Windows.Forms.TextBox();
             this.Question_own_check = new System.Windows.Forms.CheckBox();
             this.Question_create = new System.Windows.Forms.Button();
-            this.Question_view = new System.Windows.Forms.ListView();
+            this.question_list = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
             this.CorrectionEditor = new System.Windows.Forms.TabPage();
             this.Remove_CorrectionEditor = new System.Windows.Forms.Button();
@@ -264,7 +264,7 @@
             this.Question.Controls.Add(this.Question_search);
             this.Question.Controls.Add(this.Question_own_check);
             this.Question.Controls.Add(this.Question_create);
-            this.Question.Controls.Add(this.Question_view);
+            this.Question.Controls.Add(this.question_list);
             this.Question.Controls.Add(this.label3);
             this.Question.Location = new System.Drawing.Point(4, 22);
             this.Question.Name = "Question";
@@ -303,13 +303,13 @@
             this.Question_create.UseVisualStyleBackColor = true;
             this.Question_create.Click += new System.EventHandler(this.Question_create_Click);
             // 
-            // Question_view
+            // question_list
             // 
-            this.Question_view.Location = new System.Drawing.Point(21, 74);
-            this.Question_view.Name = "Question_view";
-            this.Question_view.Size = new System.Drawing.Size(729, 408);
-            this.Question_view.TabIndex = 2;
-            this.Question_view.UseCompatibleStateImageBehavior = false;
+            this.question_list.Location = new System.Drawing.Point(21, 74);
+            this.question_list.Name = "question_list";
+            this.question_list.Size = new System.Drawing.Size(729, 408);
+            this.question_list.TabIndex = 2;
+            this.question_list.UseCompatibleStateImageBehavior = false;
             // 
             // label3
             // 
@@ -643,7 +643,7 @@
         private System.Windows.Forms.TextBox Question_search;
         private System.Windows.Forms.CheckBox Question_own_check;
         private System.Windows.Forms.Button Question_create;
-        private System.Windows.Forms.ListView Question_view;
+        private System.Windows.Forms.ListView question_list;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage create_Question;
         private System.Windows.Forms.GroupBox groupBox1;
