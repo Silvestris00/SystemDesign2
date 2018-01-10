@@ -36,9 +36,11 @@ namespace Gathers
             this.Controls.Add(MainTab);
             Initialize_ref_share_list();
             Initialize_question_list();
+            Initialize_sourcecode_list();
             this.MainTab.TabPages.Remove(CorrectionEditor);
             this.MainTab.TabPages.Remove(reference_create);
             this.MainTab.TabPages.Remove(create_Question);
+            this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
         }
 
         private void Add_CorrectionEditor_Click(object sender, EventArgs e)

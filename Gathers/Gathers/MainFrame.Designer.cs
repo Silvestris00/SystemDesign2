@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
-            this.SourceCode = new System.Windows.Forms.TabPage();
             this.MainPage = new System.Windows.Forms.TabPage();
             this.Add_CorrectionEditor = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,6 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.MainTab = new System.Windows.Forms.TabControl();
+            this.share_sourcecode = new System.Windows.Forms.TabPage();
+            this.create_share_sourcecode = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.sourcecode_list = new System.Windows.Forms.ListView();
+            this.label7 = new System.Windows.Forms.Label();
             this.reference = new System.Windows.Forms.TabPage();
             this.create_new_ref = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
@@ -72,6 +77,16 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.create_share_sourcecodeTab = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cancel_share_sourcecode = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.mainnotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +94,7 @@
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.MainTab.SuspendLayout();
+            this.share_sourcecode.SuspendLayout();
             this.reference.SuspendLayout();
             this.Question.SuspendLayout();
             this.CorrectionEditor.SuspendLayout();
@@ -86,18 +102,10 @@
             this.ref_inf_gbox.SuspendLayout();
             this.create_Question.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.create_share_sourcecodeTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // SourceCode
-            // 
-            this.SourceCode.BackColor = System.Drawing.Color.White;
-            this.SourceCode.Location = new System.Drawing.Point(4, 22);
-            this.SourceCode.Name = "SourceCode";
-            this.SourceCode.Padding = new System.Windows.Forms.Padding(3);
-            this.SourceCode.Size = new System.Drawing.Size(858, 536);
-            this.SourceCode.TabIndex = 0;
-            this.SourceCode.Text = "ソースコード共有";
             // 
             // MainPage
             // 
@@ -185,17 +193,80 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTab.Controls.Add(this.MainPage);
-            this.MainTab.Controls.Add(this.SourceCode);
+            this.MainTab.Controls.Add(this.share_sourcecode);
             this.MainTab.Controls.Add(this.reference);
             this.MainTab.Controls.Add(this.Question);
             this.MainTab.Controls.Add(this.CorrectionEditor);
             this.MainTab.Controls.Add(this.reference_create);
             this.MainTab.Controls.Add(this.create_Question);
+            this.MainTab.Controls.Add(this.create_share_sourcecodeTab);
             this.MainTab.Location = new System.Drawing.Point(1, 28);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
             this.MainTab.Size = new System.Drawing.Size(866, 562);
             this.MainTab.TabIndex = 0;
+            // 
+            // share_sourcecode
+            // 
+            this.share_sourcecode.Controls.Add(this.create_share_sourcecode);
+            this.share_sourcecode.Controls.Add(this.textBox3);
+            this.share_sourcecode.Controls.Add(this.checkBox1);
+            this.share_sourcecode.Controls.Add(this.sourcecode_list);
+            this.share_sourcecode.Controls.Add(this.label7);
+            this.share_sourcecode.Location = new System.Drawing.Point(4, 22);
+            this.share_sourcecode.Name = "share_sourcecode";
+            this.share_sourcecode.Padding = new System.Windows.Forms.Padding(3);
+            this.share_sourcecode.Size = new System.Drawing.Size(858, 536);
+            this.share_sourcecode.TabIndex = 11;
+            this.share_sourcecode.Text = "ソースコード共有";
+            this.share_sourcecode.UseVisualStyleBackColor = true;
+            // 
+            // create_share_sourcecode
+            // 
+            this.create_share_sourcecode.Location = new System.Drawing.Point(198, 34);
+            this.create_share_sourcecode.Name = "create_share_sourcecode";
+            this.create_share_sourcecode.Size = new System.Drawing.Size(96, 30);
+            this.create_share_sourcecode.TabIndex = 6;
+            this.create_share_sourcecode.Text = "新規作成";
+            this.create_share_sourcecode.UseVisualStyleBackColor = true;
+            this.create_share_sourcecode.Click += new System.EventHandler(this.create_share_sourcecode_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.textBox3.Location = new System.Drawing.Point(522, 36);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(228, 19);
+            this.textBox3.TabIndex = 5;
+            this.textBox3.Text = "ソースコードを検索する";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(311, 40);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(209, 16);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "自分が共有したソースコードのみを表示";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // sourcecode_list
+            // 
+            this.sourcecode_list.Location = new System.Drawing.Point(21, 74);
+            this.sourcecode_list.Name = "sourcecode_list";
+            this.sourcecode_list.Size = new System.Drawing.Size(729, 408);
+            this.sourcecode_list.TabIndex = 2;
+            this.sourcecode_list.UseCompatibleStateImageBehavior = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(18, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 16);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "ソースコード一覧";
             // 
             // reference
             // 
@@ -544,6 +615,107 @@
             this.textBox2.Size = new System.Drawing.Size(729, 258);
             this.textBox2.TabIndex = 0;
             // 
+            // create_share_sourcecodeTab
+            // 
+            this.create_share_sourcecodeTab.Controls.Add(this.groupBox2);
+            this.create_share_sourcecodeTab.Controls.Add(this.cancel_share_sourcecode);
+            this.create_share_sourcecodeTab.Controls.Add(this.button4);
+            this.create_share_sourcecodeTab.Controls.Add(this.button5);
+            this.create_share_sourcecodeTab.Controls.Add(this.label10);
+            this.create_share_sourcecodeTab.Controls.Add(this.textBox5);
+            this.create_share_sourcecodeTab.Location = new System.Drawing.Point(4, 22);
+            this.create_share_sourcecodeTab.Name = "create_share_sourcecodeTab";
+            this.create_share_sourcecodeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.create_share_sourcecodeTab.Size = new System.Drawing.Size(858, 536);
+            this.create_share_sourcecodeTab.TabIndex = 12;
+            this.create_share_sourcecodeTab.Text = "共有ソースコードの作成";
+            this.create_share_sourcecodeTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Location = new System.Drawing.Point(21, 353);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(729, 127);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ソースコード情報";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(293, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 12);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "ジャンル :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 12);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "タイトル :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(70, 28);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(161, 19);
+            this.textBox4.TabIndex = 0;
+            // 
+            // cancel_share_sourcecode
+            // 
+            this.cancel_share_sourcecode.Location = new System.Drawing.Point(402, 34);
+            this.cancel_share_sourcecode.Name = "cancel_share_sourcecode";
+            this.cancel_share_sourcecode.Size = new System.Drawing.Size(96, 30);
+            this.cancel_share_sourcecode.TabIndex = 4;
+            this.cancel_share_sourcecode.Text = "キャンセル";
+            this.cancel_share_sourcecode.UseVisualStyleBackColor = true;
+            this.cancel_share_sourcecode.Click += new System.EventHandler(this.cancel_share_sourcecode_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(198, 34);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(96, 30);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "保存/公開";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(300, 34);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(96, 30);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "下書きの保存";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label10.Location = new System.Drawing.Point(21, 40);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(169, 16);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "共有ソースコードの作成";
+            // 
+            // textBox5
+            // 
+            this.textBox5.AllowDrop = true;
+            this.textBox5.Location = new System.Drawing.Point(21, 74);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox5.Size = new System.Drawing.Size(729, 258);
+            this.textBox5.TabIndex = 0;
+            // 
             // mainnotify
             // 
             this.mainnotify.Text = "通知";
@@ -589,6 +761,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.MainTab.ResumeLayout(false);
+            this.share_sourcecode.ResumeLayout(false);
+            this.share_sourcecode.PerformLayout();
             this.reference.ResumeLayout(false);
             this.reference.PerformLayout();
             this.Question.ResumeLayout(false);
@@ -602,6 +776,10 @@
             this.create_Question.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.create_share_sourcecodeTab.ResumeLayout(false);
+            this.create_share_sourcecodeTab.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -656,6 +834,22 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button create_new_ref;
+        private System.Windows.Forms.TabPage share_sourcecode;
+        private System.Windows.Forms.Button create_share_sourcecode;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ListView sourcecode_list;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage create_share_sourcecodeTab;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button cancel_share_sourcecode;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 
