@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
-            this.Q_and_A = new System.Windows.Forms.TabPage();
-            this.Question = new System.Windows.Forms.TabPage();
             this.SourceCode = new System.Windows.Forms.TabPage();
             this.MainPage = new System.Windows.Forms.TabPage();
             this.Add_CorrectionEditor = new System.Windows.Forms.Button();
@@ -41,11 +39,17 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.reference = new System.Windows.Forms.TabPage();
+            this.create_new_ref = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
             this.create_own_ref = new System.Windows.Forms.CheckBox();
-            this.create_new_ref = new System.Windows.Forms.Button();
             this.ref_share_list = new System.Windows.Forms.ListView();
             this.ref_share_label = new System.Windows.Forms.Label();
+            this.Question = new System.Windows.Forms.TabPage();
+            this.Question_search = new System.Windows.Forms.TextBox();
+            this.Question_own_check = new System.Windows.Forms.CheckBox();
+            this.Question_create = new System.Windows.Forms.Button();
+            this.Question_view = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
             this.CorrectionEditor = new System.Windows.Forms.TabPage();
             this.Remove_CorrectionEditor = new System.Windows.Forms.Button();
             this.reference_create = new System.Windows.Forms.TabPage();
@@ -58,6 +62,16 @@
             this.ref_save_btn = new System.Windows.Forms.Button();
             this.ref_new_label = new System.Windows.Forms.Label();
             this.ref_body_box = new System.Windows.Forms.TextBox();
+            this.create_Question = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.create_question_cancel = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.mainnotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,31 +80,14 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.reference.SuspendLayout();
+            this.Question.SuspendLayout();
             this.CorrectionEditor.SuspendLayout();
             this.reference_create.SuspendLayout();
             this.ref_inf_gbox.SuspendLayout();
+            this.create_Question.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Q_and_A
-            // 
-            this.Q_and_A.BackColor = System.Drawing.Color.White;
-            this.Q_and_A.Location = new System.Drawing.Point(4, 22);
-            this.Q_and_A.Name = "Q_and_A";
-            this.Q_and_A.Padding = new System.Windows.Forms.Padding(3);
-            this.Q_and_A.Size = new System.Drawing.Size(858, 536);
-            this.Q_and_A.TabIndex = 2;
-            this.Q_and_A.Text = "質問スレ";
-            // 
-            // Question
-            // 
-            this.Question.BackColor = System.Drawing.Color.White;
-            this.Question.Location = new System.Drawing.Point(4, 22);
-            this.Question.Name = "Question";
-            this.Question.Padding = new System.Windows.Forms.Padding(3);
-            this.Question.Size = new System.Drawing.Size(858, 536);
-            this.Question.TabIndex = 1;
-            this.Question.Text = "Gathers道場";
             // 
             // SourceCode
             // 
@@ -184,13 +181,16 @@
             // 
             // MainTab
             // 
+            this.MainTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTab.Controls.Add(this.MainPage);
             this.MainTab.Controls.Add(this.SourceCode);
             this.MainTab.Controls.Add(this.reference);
             this.MainTab.Controls.Add(this.Question);
-            this.MainTab.Controls.Add(this.Q_and_A);
             this.MainTab.Controls.Add(this.CorrectionEditor);
             this.MainTab.Controls.Add(this.reference_create);
+            this.MainTab.Controls.Add(this.create_Question);
             this.MainTab.Location = new System.Drawing.Point(1, 28);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
@@ -199,9 +199,9 @@
             // 
             // reference
             // 
+            this.reference.Controls.Add(this.create_new_ref);
             this.reference.Controls.Add(this.search_box);
             this.reference.Controls.Add(this.create_own_ref);
-            this.reference.Controls.Add(this.create_new_ref);
             this.reference.Controls.Add(this.ref_share_list);
             this.reference.Controls.Add(this.ref_share_label);
             this.reference.Location = new System.Drawing.Point(4, 22);
@@ -211,6 +211,16 @@
             this.reference.TabIndex = 8;
             this.reference.Text = "リファレンス共有";
             this.reference.UseVisualStyleBackColor = true;
+            // 
+            // create_new_ref
+            // 
+            this.create_new_ref.Location = new System.Drawing.Point(198, 34);
+            this.create_new_ref.Name = "create_new_ref";
+            this.create_new_ref.Size = new System.Drawing.Size(96, 30);
+            this.create_new_ref.TabIndex = 6;
+            this.create_new_ref.Text = "新規作成";
+            this.create_new_ref.UseVisualStyleBackColor = true;
+            this.create_new_ref.Click += new System.EventHandler(this.create_new_ref_Click);
             // 
             // search_box
             // 
@@ -231,16 +241,6 @@
             this.create_own_ref.Text = "自分で作成したリファレンスのみを表示";
             this.create_own_ref.UseVisualStyleBackColor = true;
             // 
-            // create_new_ref
-            // 
-            this.create_new_ref.Location = new System.Drawing.Point(198, 34);
-            this.create_new_ref.Name = "create_new_ref";
-            this.create_new_ref.Size = new System.Drawing.Size(96, 30);
-            this.create_new_ref.TabIndex = 3;
-            this.create_new_ref.Text = "新規作成";
-            this.create_new_ref.UseVisualStyleBackColor = true;
-            this.create_new_ref.Click += new System.EventHandler(this.create_new_ref_Click);
-            // 
             // ref_share_list
             // 
             this.ref_share_list.Location = new System.Drawing.Point(21, 74);
@@ -258,6 +258,68 @@
             this.ref_share_label.Size = new System.Drawing.Size(167, 16);
             this.ref_share_label.TabIndex = 1;
             this.ref_share_label.Text = "共有しているリファレンス";
+            // 
+            // Question
+            // 
+            this.Question.Controls.Add(this.Question_search);
+            this.Question.Controls.Add(this.Question_own_check);
+            this.Question.Controls.Add(this.Question_create);
+            this.Question.Controls.Add(this.Question_view);
+            this.Question.Controls.Add(this.label3);
+            this.Question.Location = new System.Drawing.Point(4, 22);
+            this.Question.Name = "Question";
+            this.Question.Padding = new System.Windows.Forms.Padding(3);
+            this.Question.Size = new System.Drawing.Size(858, 536);
+            this.Question.TabIndex = 9;
+            this.Question.Text = "問題作成・公開";
+            this.Question.UseVisualStyleBackColor = true;
+            // 
+            // Question_search
+            // 
+            this.Question_search.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.Question_search.Location = new System.Drawing.Point(522, 36);
+            this.Question_search.Name = "Question_search";
+            this.Question_search.Size = new System.Drawing.Size(228, 19);
+            this.Question_search.TabIndex = 5;
+            this.Question_search.Text = "問題を検索する";
+            // 
+            // Question_own_check
+            // 
+            this.Question_own_check.AutoSize = true;
+            this.Question_own_check.Location = new System.Drawing.Point(311, 40);
+            this.Question_own_check.Name = "Question_own_check";
+            this.Question_own_check.Size = new System.Drawing.Size(178, 16);
+            this.Question_own_check.TabIndex = 4;
+            this.Question_own_check.Text = "自分で作成した問題のみを表示";
+            this.Question_own_check.UseVisualStyleBackColor = true;
+            // 
+            // Question_create
+            // 
+            this.Question_create.Location = new System.Drawing.Point(198, 34);
+            this.Question_create.Name = "Question_create";
+            this.Question_create.Size = new System.Drawing.Size(96, 30);
+            this.Question_create.TabIndex = 3;
+            this.Question_create.Text = "新規作成";
+            this.Question_create.UseVisualStyleBackColor = true;
+            this.Question_create.Click += new System.EventHandler(this.Question_create_Click);
+            // 
+            // Question_view
+            // 
+            this.Question_view.Location = new System.Drawing.Point(21, 74);
+            this.Question_view.Name = "Question_view";
+            this.Question_view.Size = new System.Drawing.Size(729, 408);
+            this.Question_view.TabIndex = 2;
+            this.Question_view.UseCompatibleStateImageBehavior = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(18, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 16);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "問題一覧";
             // 
             // CorrectionEditor
             // 
@@ -381,6 +443,107 @@
             this.ref_body_box.Size = new System.Drawing.Size(729, 258);
             this.ref_body_box.TabIndex = 0;
             // 
+            // create_Question
+            // 
+            this.create_Question.Controls.Add(this.groupBox1);
+            this.create_Question.Controls.Add(this.create_question_cancel);
+            this.create_Question.Controls.Add(this.button2);
+            this.create_Question.Controls.Add(this.button3);
+            this.create_Question.Controls.Add(this.label6);
+            this.create_Question.Controls.Add(this.textBox2);
+            this.create_Question.Location = new System.Drawing.Point(4, 22);
+            this.create_Question.Name = "create_Question";
+            this.create_Question.Padding = new System.Windows.Forms.Padding(3);
+            this.create_Question.Size = new System.Drawing.Size(858, 536);
+            this.create_Question.TabIndex = 10;
+            this.create_Question.Text = "問題の新規作成";
+            this.create_Question.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Location = new System.Drawing.Point(21, 353);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(729, 127);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "問題情報";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(293, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 12);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "ジャンル :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 12);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "タイトル :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(70, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(161, 19);
+            this.textBox1.TabIndex = 0;
+            // 
+            // create_question_cancel
+            // 
+            this.create_question_cancel.Location = new System.Drawing.Point(402, 34);
+            this.create_question_cancel.Name = "create_question_cancel";
+            this.create_question_cancel.Size = new System.Drawing.Size(96, 30);
+            this.create_question_cancel.TabIndex = 4;
+            this.create_question_cancel.Text = "キャンセル";
+            this.create_question_cancel.UseVisualStyleBackColor = true;
+            this.create_question_cancel.Click += new System.EventHandler(this.create_question_cancel_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(198, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 30);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "保存/公開";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(300, 34);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 30);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "下書きの保存";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(21, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 16);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "問題の新規作成";
+            // 
+            // textBox2
+            // 
+            this.textBox2.AllowDrop = true;
+            this.textBox2.Location = new System.Drawing.Point(21, 74);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(729, 258);
+            this.textBox2.TabIndex = 0;
+            // 
             // mainnotify
             // 
             this.mainnotify.Text = "通知";
@@ -428,11 +591,17 @@
             this.MainTab.ResumeLayout(false);
             this.reference.ResumeLayout(false);
             this.reference.PerformLayout();
+            this.Question.ResumeLayout(false);
+            this.Question.PerformLayout();
             this.CorrectionEditor.ResumeLayout(false);
             this.reference_create.ResumeLayout(false);
             this.reference_create.PerformLayout();
             this.ref_inf_gbox.ResumeLayout(false);
             this.ref_inf_gbox.PerformLayout();
+            this.create_Question.ResumeLayout(false);
+            this.create_Question.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -441,8 +610,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TabPage Q_and_A;
-        private System.Windows.Forms.TabPage Question;
         private System.Windows.Forms.TabPage SourceCode;
         private System.Windows.Forms.TabPage MainPage;
         private System.Windows.Forms.TabControl MainTab;
@@ -465,14 +632,30 @@
         private System.Windows.Forms.Label ref_new_label;
         private System.Windows.Forms.TextBox ref_body_box;
         private System.Windows.Forms.TabPage reference;
-        private System.Windows.Forms.TextBox search_box;
-        private System.Windows.Forms.CheckBox create_own_ref;
-        private System.Windows.Forms.Button create_new_ref;
-        private System.Windows.Forms.ListView ref_share_list;
-        private System.Windows.Forms.Label ref_share_label;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
+        private System.Windows.Forms.TextBox search_box;
+        private System.Windows.Forms.CheckBox create_own_ref;
+        private System.Windows.Forms.ListView ref_share_list;
+        private System.Windows.Forms.Label ref_share_label;
+        private System.Windows.Forms.TabPage Question;
+        private System.Windows.Forms.TextBox Question_search;
+        private System.Windows.Forms.CheckBox Question_own_check;
+        private System.Windows.Forms.Button Question_create;
+        private System.Windows.Forms.ListView Question_view;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabPage create_Question;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button create_question_cancel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button create_new_ref;
     }
 }
 

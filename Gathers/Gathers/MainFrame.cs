@@ -28,7 +28,6 @@ namespace Gathers
             this.Size = new System.Drawing.Size(Display_Width, Display_Height);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MainTab.SizeMode = TabSizeMode.FillToRight;
             this.MainTab.Multiline = true;
             this.MainTab.Location = new Point(0, 30);
@@ -37,6 +36,7 @@ namespace Gathers
             this.Controls.Add(MainTab);
             this.MainTab.TabPages.Remove(CorrectionEditor);
             this.MainTab.TabPages.Remove(reference_create);
+            this.MainTab.TabPages.Remove(create_Question);
         }
 
         private void Add_CorrectionEditor_Click(object sender, EventArgs e)

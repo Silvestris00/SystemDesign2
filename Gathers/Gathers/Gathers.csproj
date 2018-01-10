@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="question_frame\question.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ref_frame\ref.cs">
       <SubType>Form</SubType>
     </Compile>
