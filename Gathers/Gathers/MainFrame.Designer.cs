@@ -84,10 +84,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.cancel_share_sourcecode = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.save_sourcecode = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.sourcecode_readme = new System.Windows.Forms.TextBox();
             this.mainnotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -620,10 +620,10 @@
             this.create_share_sourcecodeTab.Controls.Add(this.add_file);
             this.create_share_sourcecodeTab.Controls.Add(this.groupBox2);
             this.create_share_sourcecodeTab.Controls.Add(this.cancel_share_sourcecode);
-            this.create_share_sourcecodeTab.Controls.Add(this.button4);
+            this.create_share_sourcecodeTab.Controls.Add(this.save_sourcecode);
             this.create_share_sourcecodeTab.Controls.Add(this.button5);
             this.create_share_sourcecodeTab.Controls.Add(this.label10);
-            this.create_share_sourcecodeTab.Controls.Add(this.textBox5);
+            this.create_share_sourcecodeTab.Controls.Add(this.sourcecode_readme);
             this.create_share_sourcecodeTab.Location = new System.Drawing.Point(4, 22);
             this.create_share_sourcecodeTab.Name = "create_share_sourcecodeTab";
             this.create_share_sourcecodeTab.Padding = new System.Windows.Forms.Padding(3);
@@ -699,14 +699,15 @@
             this.cancel_share_sourcecode.UseVisualStyleBackColor = true;
             this.cancel_share_sourcecode.Click += new System.EventHandler(this.cancel_share_sourcecode_Click);
             // 
-            // button4
+            // save_sourcecode
             // 
-            this.button4.Location = new System.Drawing.Point(198, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "保存/公開";
-            this.button4.UseVisualStyleBackColor = true;
+            this.save_sourcecode.Location = new System.Drawing.Point(198, 34);
+            this.save_sourcecode.Name = "save_sourcecode";
+            this.save_sourcecode.Size = new System.Drawing.Size(96, 30);
+            this.save_sourcecode.TabIndex = 3;
+            this.save_sourcecode.Text = "保存/公開";
+            this.save_sourcecode.UseVisualStyleBackColor = true;
+            this.save_sourcecode.Click += new System.EventHandler(this.save_sourcecode_Click);
             // 
             // button5
             // 
@@ -727,15 +728,15 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "共有ソースコードの作成";
             // 
-            // textBox5
+            // sourcecode_readme
             // 
-            this.textBox5.AllowDrop = true;
-            this.textBox5.Location = new System.Drawing.Point(21, 74);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(729, 258);
-            this.textBox5.TabIndex = 0;
+            this.sourcecode_readme.AllowDrop = true;
+            this.sourcecode_readme.Location = new System.Drawing.Point(21, 74);
+            this.sourcecode_readme.Multiline = true;
+            this.sourcecode_readme.Name = "sourcecode_readme";
+            this.sourcecode_readme.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.sourcecode_readme.Size = new System.Drawing.Size(729, 258);
+            this.sourcecode_readme.TabIndex = 0;
             // 
             // mainnotify
             // 
@@ -862,10 +863,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button cancel_share_sourcecode;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button save_sourcecode;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox sourcecode_readme;
         private System.Windows.Forms.Button add_file;
         private System.Windows.Forms.Label set_file;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

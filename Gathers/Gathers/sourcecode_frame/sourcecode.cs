@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Gathers
@@ -18,6 +12,10 @@ namespace Gathers
         private ColumnHeader sourcecode_language;
         private ColumnHeader sourcecode_username;
         private ColumnHeader sourcecode_date;
+        private String sourcefile;
+        private String fileName;
+        private String directoryplace = "C:/Users/NEC-PCuser/Desktop/repos/test/";
+        private String sha;
 
         // 初期化
         private void Initialize_sourcecode_list()
@@ -66,23 +64,87 @@ namespace Gathers
             DialogResult dr = openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
-                set_file.Text += openFileDialog1.FileName;
-                System.Diagnostics.Process pro = new System.Diagnostics.Process();
-
-                pro.StartInfo.FileName = "ipconfig";            // コマンド名
-                pro.StartInfo.Arguments = "/all";               // 引数
-                pro.StartInfo.UseShellExecute = false;          // プロセスを新しいウィンドウで起動するか否か
-                pro.StartInfo.RedirectStandardOutput = true;    // 標準出力をリダイレクトして取得したい
-
-                pro.Start();
-
-                string output = pro.StandardOutput.ReadToEnd();
-                output.Replace("\r\r\n", "\n"); // 改行コード変換
-
-                MessageBox.Show(output);
+                set_file.Text = openFileDialog1.FileName.Replace("\\", "/");
+                fileName = Path.GetFileName(set_file.Text);
+                sourcefile = set_file.Text;
+                sha = hashGenerate();
+                if (!Directory.Exists(directoryplace + "/" + sha))
+                {
+                    Directory.CreateDirectory(directoryplace + "/" + sha);
+                }
+                copy();
             }
         }
 
+        private void save_sourcecode_Click(object sender, EventArgs e)
+        {
+            if (sourcefile!=null) {
+                make_info();
+                System.Diagnostics.Process pro = new System.Diagnostics.Process();
+                pro.StartInfo.FileName = "cmd.exe";       // cmd起動
+                pro.StartInfo.Arguments = @"/c C:/Users/NEC-PCuser/Desktop/repos/test/push.bat ";// batの場所
+                pro.StartInfo.CreateNoWindow = false;            // cmdの黒い画面を表示(パスワード打つ必要アリ)
+                pro.StartInfo.UseShellExecute = false;          // プロセスを新しいウィンドウで起動するか否か
+                pro.Start();
+                pro.WaitForExit();
+                this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
+                this.MainTab.SelectTab(MainPage);
+            }
+            else
+            {
+                MessageBox.Show("ソースコードが添付されていません!");
+            }
+        }
+
+        private void copy()
+        {
+            try
+            {
+                string targetpath = directoryplace + "/" + sha + "/" + fileName;
+                File.Copy(sourcefile, targetpath);
+            }
+            catch (Exception IOException)
+            {
+                MessageBox.Show(IOException.ToString());
+            }
+        }
+
+        private void make_info()
+        {
+            StreamWriter sw = File.CreateText(directoryplace + "/" + sha + "/info.txt");
+            sw.Write(sourcecode_readme.Text);
+            sw.Close();
+        }
+
+        private String hashGenerate()
+        {
+            //ファイルを開く
+            System.IO.FileStream fs = new System.IO.FileStream(
+                sourcefile, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+            //SHA1CryptoServiceProviderオブジェクトを作成
+            System.Security.Cryptography.SHA1CryptoServiceProvider sha1 =
+                new System.Security.Cryptography.SHA1CryptoServiceProvider();
+
+            //ハッシュ値を計算する
+            byte[] bs = sha1.ComputeHash(fs);
+
+            //リソースを解放する
+            sha1.Clear();
+            //ファイルを閉じる
+            fs.Close();
+
+            //byte型配列を16進数の文字列に変換
+            string result = BitConverter.ToString(bs).ToLower().Replace("-", "");
+
+            //結果を表示
+            return result;
+        }
+
+        /// 指定したパスにディレクトリが存在しない場合
+        /// すべてのディレクトリとサブディレクトリを作成します
+
+        /*
         private void FileSource_DragEnter(object sender, DragEventArgs e)
         {
             //ファイルがドラッグされている場合、カーソルを変更する
@@ -103,5 +165,6 @@ namespace Gathers
             //labelの内容をファイル名に変更
             set_file.Text += fileName[0];
         }
+        */
     }
 }
