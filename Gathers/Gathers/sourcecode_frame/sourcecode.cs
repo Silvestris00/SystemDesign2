@@ -59,5 +59,49 @@ namespace Gathers
         {
             this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
         }
+
+        private void add_file_Click(object sender, EventArgs e)
+        {
+            //ファイル参照ダイアログを開く
+            DialogResult dr = openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                set_file.Text += openFileDialog1.FileName;
+                System.Diagnostics.Process pro = new System.Diagnostics.Process();
+
+                pro.StartInfo.FileName = "ipconfig";            // コマンド名
+                pro.StartInfo.Arguments = "/all";               // 引数
+                pro.StartInfo.UseShellExecute = false;          // プロセスを新しいウィンドウで起動するか否か
+                pro.StartInfo.RedirectStandardOutput = true;    // 標準出力をリダイレクトして取得したい
+
+                pro.Start();
+
+                string output = pro.StandardOutput.ReadToEnd();
+                output.Replace("\r\r\n", "\n"); // 改行コード変換
+
+                MessageBox.Show(output);
+            }
+        }
+
+        private void FileSource_DragEnter(object sender, DragEventArgs e)
+        {
+            //ファイルがドラッグされている場合、カーソルを変更する
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void FileSource_DragDrop(object sender, DragEventArgs e)
+        {
+            //ドロップされたファイルの一覧を取得
+            string[] fileName = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            if (fileName.Length <= 0)
+            {
+                return;
+            }
+            //labelの内容をファイル名に変更
+            set_file.Text += fileName[0];
+        }
     }
 }

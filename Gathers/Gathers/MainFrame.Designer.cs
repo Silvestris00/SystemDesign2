@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.MainPage = new System.Windows.Forms.TabPage();
             this.Add_CorrectionEditor = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -78,7 +77,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.create_share_sourcecodeTab = new System.Windows.Forms.TabPage();
+            this.add_file = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.set_file = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -89,8 +90,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.mainnotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -474,7 +475,6 @@
             this.ref_cancel_btn.TabIndex = 4;
             this.ref_cancel_btn.Text = "キャンセル";
             this.ref_cancel_btn.UseVisualStyleBackColor = true;
-            this.ref_cancel_btn.Click += new System.EventHandler(this.ref_cancel_btn_Click);
             // 
             // ref_upload_btn
             // 
@@ -617,6 +617,7 @@
             // 
             // create_share_sourcecodeTab
             // 
+            this.create_share_sourcecodeTab.Controls.Add(this.add_file);
             this.create_share_sourcecodeTab.Controls.Add(this.groupBox2);
             this.create_share_sourcecodeTab.Controls.Add(this.cancel_share_sourcecode);
             this.create_share_sourcecodeTab.Controls.Add(this.button4);
@@ -631,8 +632,19 @@
             this.create_share_sourcecodeTab.Text = "共有ソースコードの作成";
             this.create_share_sourcecodeTab.UseVisualStyleBackColor = true;
             // 
+            // add_file
+            // 
+            this.add_file.Location = new System.Drawing.Point(402, 34);
+            this.add_file.Name = "add_file";
+            this.add_file.Size = new System.Drawing.Size(96, 30);
+            this.add_file.TabIndex = 6;
+            this.add_file.Text = "ファイルの添付";
+            this.add_file.UseVisualStyleBackColor = true;
+            this.add_file.Click += new System.EventHandler(this.add_file_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.set_file);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textBox4);
@@ -642,6 +654,15 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ソースコード情報";
+            // 
+            // set_file
+            // 
+            this.set_file.AutoSize = true;
+            this.set_file.Location = new System.Drawing.Point(24, 64);
+            this.set_file.Name = "set_file";
+            this.set_file.Size = new System.Drawing.Size(77, 12);
+            this.set_file.TabIndex = 3;
+            this.set_file.Text = "添付ファイル :  ";
             // 
             // label8
             // 
@@ -670,7 +691,7 @@
             // 
             // cancel_share_sourcecode
             // 
-            this.cancel_share_sourcecode.Location = new System.Drawing.Point(402, 34);
+            this.cancel_share_sourcecode.Location = new System.Drawing.Point(504, 35);
             this.cancel_share_sourcecode.Name = "cancel_share_sourcecode";
             this.cancel_share_sourcecode.Size = new System.Drawing.Size(96, 30);
             this.cancel_share_sourcecode.TabIndex = 4;
@@ -724,7 +745,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルToolStripMenuItem,
             this.ヘルプToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -732,17 +752,15 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ファイルToolStripMenuItem
-            // 
-            this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
-            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ファイルToolStripMenuItem.Text = "ファイル";
-            // 
             // ヘルプToolStripMenuItem
             // 
             this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainFrame
             // 
@@ -751,7 +769,6 @@
             this.ClientSize = new System.Drawing.Size(867, 589);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.MainTab);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Gathers\'";
@@ -811,7 +828,6 @@
         private System.Windows.Forms.TextBox ref_body_box;
         private System.Windows.Forms.TabPage reference;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
         private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.CheckBox create_own_ref;
@@ -850,6 +866,9 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button add_file;
+        private System.Windows.Forms.Label set_file;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
