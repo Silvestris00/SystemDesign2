@@ -14,7 +14,7 @@ namespace Gathers
         private ColumnHeader sourcecode_date;
         private String sourcefile;
         private String fileName;
-        private String directoryplace = "C:/Users/NEC-PCuser/Desktop/repos/test/";
+        private String directoryplace = "./repos/test/";
         private String sha;
 
         // 初期化
@@ -81,9 +81,9 @@ namespace Gathers
             if (sourcefile!=null) {
                 make_info();
                 System.Diagnostics.Process pro = new System.Diagnostics.Process();
-                pro.StartInfo.FileName = "cmd.exe";       // cmd起動
-                pro.StartInfo.Arguments = @"/c C:/Users/NEC-PCuser/Desktop/repos/test/push.bat ";// batの場所
-                pro.StartInfo.CreateNoWindow = false;            // cmdの黒い画面を表示(パスワード打つ必要アリ)
+                pro.StartInfo.FileName = "push.bat";             // cmd起動
+                //pro.StartInfo.Arguments = "push.bat";        // batの場所
+                pro.StartInfo.CreateNoWindow = false;           // cmdの黒い画面を表示(パスワード打つ必要アリ)
                 pro.StartInfo.UseShellExecute = false;          // プロセスを新しいウィンドウで起動するか否か
                 pro.Start();
                 pro.WaitForExit();
