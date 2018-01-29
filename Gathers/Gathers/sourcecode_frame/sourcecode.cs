@@ -16,10 +16,19 @@ namespace Gathers
         private String fileName;
         private String directoryplace = "./repos/test/";
         private String sha;
+        System.Diagnostics.Process pro = new System.Diagnostics.Process();
+
 
         // 初期化
         private void Initialize_sourcecode_list()
         {
+            //プロセス制御の設定
+            pro.StartInfo.FileName = @"C:/Program Files (x86)/Git/git-cmd.exe";
+            pro.StartInfo.RedirectStandardOutput = true;
+            pro.StartInfo.RedirectStandardInput = false;
+            pro.StartInfo.CreateNoWindow = true;
+            pro.StartInfo.UseShellExecute = false;
+
             // プロパティを設定
             sourcecode_list.FullRowSelect = true;
             sourcecode_list.GridLines = true;
@@ -78,15 +87,21 @@ namespace Gathers
 
         private void save_sourcecode_Click(object sender, EventArgs e)
         {
+            String results;
+            String commitcomment = "test";
+            String[] gitcommand= { @"/c cd ./repos/test && git add . ", @"/c cd ./repos/test && git commit -m " + commitcomment, @"/c cd ./repos/test && git push " };
             if (sourcefile!=null) {
                 make_info();
-                System.Diagnostics.Process pro = new System.Diagnostics.Process();
-                pro.StartInfo.FileName = "push.bat";             // cmd起動
-                //pro.StartInfo.Arguments = "push.bat";        // batの場所
-                pro.StartInfo.CreateNoWindow = false;           // cmdの黒い画面を表示(パスワード打つ必要アリ)
-                pro.StartInfo.UseShellExecute = false;          // プロセスを新しいウィンドウで起動するか否か
-                pro.Start();
-                pro.WaitForExit();
+                for (int i = 0; i < gitcommand.Length; i++)
+                {
+                    pro.StartInfo.Arguments = gitcommand[i];
+                    pro.Start();
+                    results = pro.StandardOutput.ReadToEnd();
+                    pro.WaitForExit();
+                    pro.Close();
+                    MessageBox.Show(results);
+                    System.Threading.Thread.Sleep(1000);
+                }
                 this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
                 this.MainTab.SelectTab(MainPage);
             }
