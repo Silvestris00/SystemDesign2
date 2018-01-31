@@ -92,6 +92,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.genre = new System.Windows.Forms.TextBox();
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.MainTab.SuspendLayout();
@@ -644,6 +645,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.genre);
             this.groupBox2.Controls.Add(this.set_file);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
@@ -763,6 +765,13 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // genre
+            // 
+            this.genre.Location = new System.Drawing.Point(338, 28);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(161, 19);
+            this.genre.TabIndex = 4;
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -870,6 +879,7 @@
         private System.Windows.Forms.Button add_file;
         private System.Windows.Forms.Label set_file;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox genre;
     }
 }
 
