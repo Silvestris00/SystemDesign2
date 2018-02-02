@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPage = new System.Windows.Forms.TabPage();
             this.Add_CorrectionEditor = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -37,10 +43,17 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.share_sourcecode = new System.Windows.Forms.TabPage();
+            this.soucecode_datalist = new System.Windows.Forms.DataGridView();
+            this.S_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.S_Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.S_Language = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.S_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.showbtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pull_sourcecode = new System.Windows.Forms.Button();
             this.create_share_sourcecode = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.sourcecode_list = new System.Windows.Forms.ListView();
             this.label7 = new System.Windows.Forms.Label();
             this.reference = new System.Windows.Forms.TabPage();
             this.create_new_ref = new System.Windows.Forms.Button();
@@ -79,6 +92,7 @@
             this.create_share_sourcecodeTab = new System.Windows.Forms.TabPage();
             this.add_file = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.genre = new System.Windows.Forms.TextBox();
             this.set_file = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -91,12 +105,13 @@
             this.mainnotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.genre = new System.Windows.Forms.TextBox();
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.share_sourcecode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soucecode_datalist)).BeginInit();
             this.reference.SuspendLayout();
             this.Question.SuspendLayout();
             this.CorrectionEditor.SuspendLayout();
@@ -210,10 +225,11 @@
             // 
             // share_sourcecode
             // 
+            this.share_sourcecode.Controls.Add(this.soucecode_datalist);
+            this.share_sourcecode.Controls.Add(this.pull_sourcecode);
             this.share_sourcecode.Controls.Add(this.create_share_sourcecode);
             this.share_sourcecode.Controls.Add(this.textBox3);
             this.share_sourcecode.Controls.Add(this.checkBox1);
-            this.share_sourcecode.Controls.Add(this.sourcecode_list);
             this.share_sourcecode.Controls.Add(this.label7);
             this.share_sourcecode.Location = new System.Drawing.Point(4, 22);
             this.share_sourcecode.Name = "share_sourcecode";
@@ -223,11 +239,112 @@
             this.share_sourcecode.Text = "ソースコード共有";
             this.share_sourcecode.UseVisualStyleBackColor = true;
             // 
+            // soucecode_datalist
+            // 
+            this.soucecode_datalist.AllowUserToAddRows = false;
+            this.soucecode_datalist.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.soucecode_datalist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.soucecode_datalist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.soucecode_datalist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.S_Address,
+            this.S_Comment,
+            this.S_Language,
+            this.User_id,
+            this.S_Date,
+            this.showbtn});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.soucecode_datalist.DefaultCellStyle = dataGridViewCellStyle6;
+            this.soucecode_datalist.Location = new System.Drawing.Point(41, 70);
+            this.soucecode_datalist.Name = "soucecode_datalist";
+            this.soucecode_datalist.ReadOnly = true;
+            this.soucecode_datalist.RowTemplate.Height = 21;
+            this.soucecode_datalist.Size = new System.Drawing.Size(765, 406);
+            this.soucecode_datalist.TabIndex = 8;
+            this.soucecode_datalist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.soucecode_CellContentClick);
+            // 
+            // S_Address
+            // 
+            this.S_Address.DataPropertyName = "S_Address";
+            this.S_Address.HeaderText = "ハッシュ値";
+            this.S_Address.Name = "S_Address";
+            this.S_Address.ReadOnly = true;
+            // 
+            // S_Comment
+            // 
+            this.S_Comment.DataPropertyName = "S_Comment";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Comment.DefaultCellStyle = dataGridViewCellStyle2;
+            this.S_Comment.HeaderText = "タイトル";
+            this.S_Comment.Name = "S_Comment";
+            this.S_Comment.ReadOnly = true;
+            this.S_Comment.Width = 180;
+            // 
+            // S_Language
+            // 
+            this.S_Language.DataPropertyName = "S_Language";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Language.DefaultCellStyle = dataGridViewCellStyle3;
+            this.S_Language.HeaderText = "言語";
+            this.S_Language.Name = "S_Language";
+            this.S_Language.ReadOnly = true;
+            // 
+            // User_id
+            // 
+            this.User_id.DataPropertyName = "User_id";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.User_id.DefaultCellStyle = dataGridViewCellStyle4;
+            this.User_id.HeaderText = "投稿者";
+            this.User_id.Name = "User_id";
+            this.User_id.ReadOnly = true;
+            this.User_id.Width = 140;
+            // 
+            // S_Date
+            // 
+            this.S_Date.DataPropertyName = "S_Date";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Date.DefaultCellStyle = dataGridViewCellStyle5;
+            this.S_Date.HeaderText = "日付";
+            this.S_Date.Name = "S_Date";
+            this.S_Date.ReadOnly = true;
+            // 
+            // showbtn
+            // 
+            this.showbtn.HeaderText = "";
+            this.showbtn.Name = "showbtn";
+            this.showbtn.ReadOnly = true;
+            this.showbtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.showbtn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.showbtn.Text = "閲覧";
+            this.showbtn.UseColumnTextForButtonValue = true;
+            // 
+            // pull_sourcecode
+            // 
+            this.pull_sourcecode.Location = new System.Drawing.Point(150, 34);
+            this.pull_sourcecode.Name = "pull_sourcecode";
+            this.pull_sourcecode.Size = new System.Drawing.Size(78, 30);
+            this.pull_sourcecode.TabIndex = 7;
+            this.pull_sourcecode.Text = "pull(デバッグ)";
+            this.pull_sourcecode.UseVisualStyleBackColor = true;
+            this.pull_sourcecode.Click += new System.EventHandler(this.pull_sourcecode_Click);
+            // 
             // create_share_sourcecode
             // 
-            this.create_share_sourcecode.Location = new System.Drawing.Point(198, 34);
+            this.create_share_sourcecode.Location = new System.Drawing.Point(234, 34);
             this.create_share_sourcecode.Name = "create_share_sourcecode";
-            this.create_share_sourcecode.Size = new System.Drawing.Size(96, 30);
+            this.create_share_sourcecode.Size = new System.Drawing.Size(69, 30);
             this.create_share_sourcecode.TabIndex = 6;
             this.create_share_sourcecode.Text = "新規作成";
             this.create_share_sourcecode.UseVisualStyleBackColor = true;
@@ -251,14 +368,6 @@
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "自分が共有したソースコードのみを表示";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // sourcecode_list
-            // 
-            this.sourcecode_list.Location = new System.Drawing.Point(21, 74);
-            this.sourcecode_list.Name = "sourcecode_list";
-            this.sourcecode_list.Size = new System.Drawing.Size(729, 408);
-            this.sourcecode_list.TabIndex = 2;
-            this.sourcecode_list.UseCompatibleStateImageBehavior = false;
             // 
             // label7
             // 
@@ -657,6 +766,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ソースコード情報";
             // 
+            // genre
+            // 
+            this.genre.Location = new System.Drawing.Point(338, 28);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(161, 19);
+            this.genre.TabIndex = 4;
+            // 
             // set_file
             // 
             this.set_file.AutoSize = true;
@@ -748,7 +864,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ヘルプToolStripMenuItem});
+            this.ヘルプToolStripMenuItem,
+            this.cloneToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(867, 24);
@@ -761,16 +878,16 @@
             this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ヘルプToolStripMenuItem.Text = "ヘルプ";
             // 
+            // cloneToolStripMenuItem
+            // 
+            this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
+            this.cloneToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.cloneToolStripMenuItem.Text = "clone";
+            this.cloneToolStripMenuItem.Click += new System.EventHandler(this.cloneToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // genre
-            // 
-            this.genre.Location = new System.Drawing.Point(338, 28);
-            this.genre.Name = "genre";
-            this.genre.Size = new System.Drawing.Size(161, 19);
-            this.genre.TabIndex = 4;
             // 
             // MainFrame
             // 
@@ -790,6 +907,7 @@
             this.MainTab.ResumeLayout(false);
             this.share_sourcecode.ResumeLayout(false);
             this.share_sourcecode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soucecode_datalist)).EndInit();
             this.reference.ResumeLayout(false);
             this.reference.PerformLayout();
             this.Question.ResumeLayout(false);
@@ -864,7 +982,6 @@
         private System.Windows.Forms.Button create_share_sourcecode;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ListView sourcecode_list;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage create_share_sourcecodeTab;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -880,6 +997,15 @@
         private System.Windows.Forms.Label set_file;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox genre;
+        private System.Windows.Forms.Button pull_sourcecode;
+        private System.Windows.Forms.DataGridView soucecode_datalist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn S_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn S_Comment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn S_Language;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn S_Date;
+        private System.Windows.Forms.DataGridViewButtonColumn showbtn;
+        private System.Windows.Forms.ToolStripMenuItem cloneToolStripMenuItem;
     }
 }
 

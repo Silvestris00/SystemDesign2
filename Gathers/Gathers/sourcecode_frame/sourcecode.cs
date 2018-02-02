@@ -1,20 +1,20 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.Data;
 
 namespace Gathers
 {
     public partial class MainFrame : Form
     {
-        private ColumnHeader sourcecode_fileName;
-        private ColumnHeader sourcecode_comment;
-        private ColumnHeader sourcecode_language;
-        private ColumnHeader sourcecode_username;
-        private ColumnHeader sourcecode_date;
         private String fileName;
-        static private String master = "./repos/test";
-        private String directoryplace = master+"/sourcecode/";
-        System.Diagnostics.Process pro = new System.Diagnostics.Process();
+        static private String master = Application.StartupPath+ "/repos/gathers_data";
+        static private String databaseFilePath = master + "/database/database/Gathers.db";
+        private String directoryplace = master+"/sourcecode/sourcecode";
+        private System.Diagnostics.Process pro = new System.Diagnostics.Process();
+        SQLiteConnection con = new SQLiteConnection("Data Source=" + databaseFilePath);
+        DataTable dataTable = new DataTable();
 
         // 初期化
         private void Initialize_sourcecode_list()
@@ -27,32 +27,15 @@ namespace Gathers
             //pro.StartInfo.RedirectStandardInput = false;
             //ウィンドウを表示しないようにする
             pro.StartInfo.CreateNoWindow = false;
+        }
 
-            // プロパティを設定
-            sourcecode_list.FullRowSelect = true;
-            sourcecode_list.GridLines = true;
-            sourcecode_list.Sorting = SortOrder.Ascending;
-            sourcecode_list.View = View.Details;
-
-            // 列（コラム）ヘッダの作成
-            sourcecode_fileName = new ColumnHeader();
-            sourcecode_comment = new ColumnHeader();
-            sourcecode_language = new ColumnHeader();
-            sourcecode_username = new ColumnHeader();
-            sourcecode_date = new ColumnHeader();
-            sourcecode_fileName.Text = "ファイル名";
-            sourcecode_fileName.Width = 100;
-            sourcecode_comment.Text = "コメント";
-            sourcecode_comment.Width = 200;
-            sourcecode_language.Text = "使用言語";
-            sourcecode_language.Width = 150;
-            sourcecode_username.Text = "作成者";
-            sourcecode_username.Width = 150;
-            sourcecode_date.Text = "作成日時";
-            sourcecode_date.Width = 150;
-            ColumnHeader[] sourcecodeRegValue =
-              { this.sourcecode_fileName, this.sourcecode_comment, this.sourcecode_language, this.sourcecode_username, this.sourcecode_date};
-            sourcecode_list.Columns.AddRange(sourcecodeRegValue);
+        private void soucecode_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 閲覧ボタン列かどうかを確認
+            if (e.ColumnIndex == this.soucecode_datalist.Columns["showbtn"].Index)
+            {
+                MessageBox.Show("動作確認!");
+            }
         }
 
         private void create_share_sourcecode_Click(object sender, EventArgs e)
@@ -64,6 +47,34 @@ namespace Gathers
         private void cancel_share_sourcecode_Click(object sender, EventArgs e)
         {
             this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
+        }
+
+        private void cloneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String[] gitclonecommand = { @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git",
+                                         @" cd " + master + "&& rename test database",
+                                         @" cd " + master + "/database && git checkout -b database origin/database",
+                                         @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git",
+                                         @" cd " + master + "&& rename test sourcecode",
+                                         @" cd " + master + "/sourcecode && git checkout -b sourcecode origin/sourcecode"};
+            run_cmd(gitclonecommand);
+            load_database();
+        }
+
+        private void pull_sourcecode_Click(object sender, EventArgs e)
+        {
+            String[] gitpullcommand = { @" cd " + master + "/database && git pull ",
+                                        @" cd " + master + "/sourcecode && git pull "};
+            run_cmd(gitpullcommand);
+            load_database();
+        }
+
+        private void load_database()
+        {
+            this.dataTable.Clear();
+            SQLiteDataAdapter readadapter = new SQLiteDataAdapter("SELECT * FROM SOURCE;", con);
+            readadapter.Fill(dataTable);
+            soucecode_datalist.DataSource = dataTable;
         }
 
         private void add_file_Click(object sender, EventArgs e)
@@ -80,10 +91,10 @@ namespace Gathers
         private void save_sourcecode_Click(object sender, EventArgs e)
         {
             String sourcecodeGenre = genre.Text;
-            //String results;
-            String commitcomment = "test";
+            String userid = "guest";
+            String hash = hashGenerate();
             if (sourcecodeGenre!="") {
-                directoryplace += "/"+ sourcecodeGenre + "/" + DateTime.Now.ToString("yyyy_MM") + "/" + hashGenerate();
+                directoryplace += "/"+ sourcecodeGenre + "/" + DateTime.Now.ToString("yyyy_MM") + "/" + hash;
                 if (!Directory.Exists(directoryplace))
                 {
                     Directory.CreateDirectory(directoryplace);
@@ -92,22 +103,23 @@ namespace Gathers
                 if (fileName != null)
                 {
                     make_info();
-                    String[] gitcommand = { @" cd " + master + " && git add . ",
-                                            @" cd " + master + " && git commit -m " + commitcomment,
-                                            @" cd " + master + " && git push " };
-                    for (int i = 0; i < gitcommand.Length; i++)
+                    run_cmd(@" cd " + master + "/database && git pull ");
+                    using (SQLiteCommand cmd = con.CreateCommand())
                     {
-                        pro.StartInfo.Arguments = gitcommand[i];
-                        pro.Start();
-                        //results = pro.StandardOutput.ReadToEnd();
-                        pro.WaitForExit();
-                        pro.Close();
-                        //Console.WriteLine(results);
-                        System.Threading.Thread.Sleep(1000);
+                        con.Open();
+                        cmd.CommandText = "INSERT into SOURCE values('" + hash + "','" + fileName + "','" + sourcecodeGenre + "','" + userid + "'," + DateTime.Now.ToString("yyyyMM") + ");";
+                        cmd.ExecuteNonQuery();
                     }
-
+                    String[] gitpushcommand = { @" cd " + master + "/sourcecode && git add . ",
+                                                @" cd " + master + "/sourcecode && git commit -m " + hash,
+                                                @" cd " + master + "/sourcecode && git push origin sourcecode",
+                                                @" cd " + master + "/database && git add . ",
+                                                @" cd " + master + "/database && git commit -m " + hash,
+                                                @" cd " + master + "/database && git push origin database"};
+                    run_cmd(gitpushcommand);
+                    load_database();
                     this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
-                    this.MainTab.SelectTab(MainPage);
+                    this.MainTab.SelectTab(SourceCode);
                 }
                 else
                 {
@@ -118,6 +130,33 @@ namespace Gathers
             {
                 MessageBox.Show("ジャンルが指定されていません!");
             }
+        }
+
+        private void run_cmd(String [] command)
+        {
+            //String results;
+            for (int i = 0; i < command.Length; i++)
+            {
+                pro.StartInfo.Arguments = command[i];
+                pro.Start();
+                //results = pro.StandardOutput.ReadToEnd();
+                pro.WaitForExit();
+                pro.Close();
+                //Console.WriteLine(results);
+                System.Threading.Thread.Sleep(1000);
+            }
+        }
+
+        private void run_cmd(String command)
+        {
+            //String results;
+            pro.StartInfo.Arguments = command;
+            pro.Start();
+            //results = pro.StandardOutput.ReadToEnd();
+            pro.WaitForExit();
+            pro.Close();
+            //Console.WriteLine(results);
+            System.Threading.Thread.Sleep(1000);
         }
 
         private void copy()

@@ -24,3 +24,20 @@ C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csprojResolveAssemblyR
 C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
 C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.Properties.Resources.resources
 C:\NIT-AC\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csproj.GenerateResource.Cache
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.exe.config
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.exe
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.pdb
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.exe
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\Gathers.pdb
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csprojResolveAssemblyReference.cache
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.MainFrame.resources
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.Properties.Resources.resources
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\obj\Debug\Gathers.csproj.GenerateResource.Cache
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\EntityFramework.dll
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\System.Data.SQLite.dll
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\EntityFramework.xml
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NEC-PCuser\Desktop\new devlop\SystemDesign2\Gathers\Gathers\bin\Debug\System.Data.SQLite.xml
