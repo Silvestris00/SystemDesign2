@@ -131,6 +131,10 @@ namespace Gathers
                                                 @" cd " + master + "/database && git push origin database && exit "};
                     run_cmd(gitpushcommand);
                     load_database();
+                    sourcecode_readme.Text = "";
+                    set_file.Text = "添付ファイル :  ";
+                    genre.Text = "";
+                    title.Text = "";
                     this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
                     this.MainTab.SelectTab(MainPage);
                 }
