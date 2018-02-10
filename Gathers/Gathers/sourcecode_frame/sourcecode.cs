@@ -13,7 +13,7 @@ namespace Gathers
         static private String databaseFilePath = master + "/database/database/Gathers.db";
         private String directoryplace = master+"/sourcecode/sourcecode";
         private System.Diagnostics.Process pro = new System.Diagnostics.Process();
-        SQLiteConnection con = new SQLiteConnection("Data Source=" + databaseFilePath);
+        SQLiteConnection con;
         DataTable dataTable = new DataTable();
 
         // 初期化
@@ -27,6 +27,8 @@ namespace Gathers
             //pro.StartInfo.RedirectStandardInput = false;
             //ウィンドウを表示しないようにする
             pro.StartInfo.CreateNoWindow = false;
+            con = new SQLiteConnection("Data Source=" + databaseFilePath);
+            load_database();
         }
 
         private void soucecode_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,30 +53,41 @@ namespace Gathers
 
         private void cloneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] gitclonecommand = { @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git",
-                                         @" cd " + master + "&& rename test database",
-                                         @" cd " + master + "/database && git checkout -b database origin/database",
-                                         @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git",
-                                         @" cd " + master + "&& rename test sourcecode",
-                                         @" cd " + master + "/sourcecode && git checkout -b sourcecode origin/sourcecode"};
+            if (!Directory.Exists(master))
+            {
+                Directory.CreateDirectory(master);
+            }
+            String[] gitclonecommand = { @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git && exit ",
+                                         @" cd " + master + "&& rename test database && exit ",
+                                         @" cd " + master + "/database && git checkout -b database origin/database && exit ",
+                                         @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git && exit ",
+                                         @" cd " + master + "&& rename test sourcecode && exit ",
+                                         @" cd " + master + "/sourcecode && git checkout -b sourcecode origin/sourcecode && exit "};
             run_cmd(gitclonecommand);
             load_database();
         }
 
         private void pull_sourcecode_Click(object sender, EventArgs e)
         {
-            String[] gitpullcommand = { @" cd " + master + "/database && git pull ",
-                                        @" cd " + master + "/sourcecode && git pull "};
+            String[] gitpullcommand = { @" cd " + master + "/database && git pull && exit ",
+                                        @" cd " + master + "/sourcecode && git pull && exit "};
             run_cmd(gitpullcommand);
             load_database();
         }
 
         private void load_database()
         {
-            this.dataTable.Clear();
-            SQLiteDataAdapter readadapter = new SQLiteDataAdapter("SELECT * FROM SOURCE;", con);
-            readadapter.Fill(dataTable);
-            soucecode_datalist.DataSource = dataTable;
+            if (System.IO.File.Exists(databaseFilePath))
+            {
+                this.dataTable.Clear();
+                for (int idx = this.soucecode_datalist.Rows.Count - 1;idx>=0;idx--)
+                {
+                    this.soucecode_datalist.Rows.RemoveAt(idx);
+                }
+                SQLiteDataAdapter readadapter = new SQLiteDataAdapter("SELECT * FROM SOURCE;", con);
+                readadapter.Fill(dataTable);
+                soucecode_datalist.DataSource = dataTable;
+            }
         }
 
         private void add_file_Click(object sender, EventArgs e)
@@ -103,23 +116,23 @@ namespace Gathers
                 if (fileName != null)
                 {
                     make_info();
-                    run_cmd(@" cd " + master + "/database && git pull ");
+                    run_cmd(@" cd " + master + "/database && git pull && exit ");
                     using (SQLiteCommand cmd = con.CreateCommand())
                     {
                         con.Open();
                         cmd.CommandText = "INSERT into SOURCE values('" + hash + "','" + fileName + "','" + sourcecodeGenre + "','" + userid + "'," + DateTime.Now.ToString("yyyyMM") + ");";
                         cmd.ExecuteNonQuery();
                     }
-                    String[] gitpushcommand = { @" cd " + master + "/sourcecode && git add . ",
-                                                @" cd " + master + "/sourcecode && git commit -m " + hash,
-                                                @" cd " + master + "/sourcecode && git push origin sourcecode",
-                                                @" cd " + master + "/database && git add . ",
-                                                @" cd " + master + "/database && git commit -m " + hash,
-                                                @" cd " + master + "/database && git push origin database"};
+                    String[] gitpushcommand = { @" cd " + master + "/sourcecode && git add . && exit ",
+                                                @" cd " + master + "/sourcecode && git commit -m " + hash + " && exit ",
+                                                @" cd " + master + "/sourcecode && git push origin sourcecode && exit ",
+                                                @" cd " + master + "/database && git add . && exit ",
+                                                @" cd " + master + "/database && git commit -m " + hash + " && exit ",
+                                                @" cd " + master + "/database && git push origin database && exit "};
                     run_cmd(gitpushcommand);
                     load_database();
                     this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
-                    this.MainTab.SelectTab(SourceCode);
+                    this.MainTab.SelectTab(MainPage);
                 }
                 else
                 {
