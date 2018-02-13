@@ -36,7 +36,17 @@ namespace Gathers
             // 閲覧ボタン列かどうかを確認
             if (e.ColumnIndex == this.soucecode_datalist.Columns["showbtn"].Index)
             {
-                MessageBox.Show("動作確認!");
+                String filehash = soucecode_datalist.Rows[e.RowIndex].Cells[1].Value.ToString();
+                String genre = soucecode_datalist.Rows[e.RowIndex].Cells[3].Value.ToString();
+                String date = soucecode_datalist.Rows[e.RowIndex].Cells[5].Value.ToString().Insert(4, "_");
+                if (Directory.Exists(directoryplace + "/" + genre + "/" + date + "/" + filehash))
+                {
+                    System.Diagnostics.Process.Start("explorer.exe", directoryplace + "/" + genre + "/" + date + "/" + filehash);
+                }
+                else
+                {
+                    MessageBox.Show("ファイルが存在しません");
+                }
             }
         }
 

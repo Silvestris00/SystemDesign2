@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPage = new System.Windows.Forms.TabPage();
-            this.Add_CorrectionEditor = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Add_CorrectionEditor = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.share_sourcecode = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.soucecode_datalist = new System.Windows.Forms.DataGridView();
             this.S_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S_Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,10 +54,11 @@
             this.showbtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pull_sourcecode = new System.Windows.Forms.Button();
             this.create_share_sourcecode = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.search_sourcecode = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.reference = new System.Windows.Forms.TabPage();
+            this.ReturnToMainPage = new System.Windows.Forms.Button();
             this.create_new_ref = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
             this.create_own_ref = new System.Windows.Forms.CheckBox();
@@ -96,7 +99,7 @@
             this.set_file = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.title = new System.Windows.Forms.TextBox();
             this.cancel_share_sourcecode = new System.Windows.Forms.Button();
             this.save_sourcecode = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -107,8 +110,11 @@
             this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainTab.SuspendLayout();
             this.share_sourcecode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soucecode_datalist)).BeginInit();
@@ -127,7 +133,6 @@
             // MainPage
             // 
             this.MainPage.BackColor = System.Drawing.Color.White;
-            this.MainPage.Controls.Add(this.Add_CorrectionEditor);
             this.MainPage.Controls.Add(this.tableLayoutPanel1);
             this.MainPage.Location = new System.Drawing.Point(4, 22);
             this.MainPage.Name = "MainPage";
@@ -136,34 +141,53 @@
             this.MainPage.TabIndex = 5;
             this.MainPage.Text = "メインページ";
             // 
-            // Add_CorrectionEditor
-            // 
-            this.Add_CorrectionEditor.Location = new System.Drawing.Point(40, 205);
-            this.Add_CorrectionEditor.Name = "Add_CorrectionEditor";
-            this.Add_CorrectionEditor.Size = new System.Drawing.Size(120, 23);
-            this.Add_CorrectionEditor.TabIndex = 1;
-            this.Add_CorrectionEditor.Text = "添削エディタ起動";
-            this.Add_CorrectionEditor.UseVisualStyleBackColor = true;
-            this.Add_CorrectionEditor.Click += new System.EventHandler(this.Add_CorrectionEditor_Click);
-            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.11655F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.88345F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.listBox1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Add_CorrectionEditor, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.46358F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.56954F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.25444F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(845, 177);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.17073F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.82927F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(858, 536);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox2.Image = global::Gathers.Properties.Resources.スライド2;
+            this.pictureBox2.Location = new System.Drawing.Point(550, 127);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(120, 3, 3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(132, 197);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("HGP明朝B", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(433, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(422, 85);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Gathers\'は阿南高専吉田研究室によって生まれた\r\nあなたとあなたのチームのプログラミングを\r\n手助けするアプリケーションです。";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label1
             // 
@@ -172,37 +196,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(839, 54);
+            this.label1.Size = new System.Drawing.Size(424, 85);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gathersへようこそ!";
+            this.label1.Text = "Gathers\'へようこそ!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // Add_CorrectionEditor
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(839, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "通知";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Add_CorrectionEditor.Location = new System.Drawing.Point(433, 369);
+            this.Add_CorrectionEditor.Name = "Add_CorrectionEditor";
+            this.Add_CorrectionEditor.Size = new System.Drawing.Size(120, 23);
+            this.Add_CorrectionEditor.TabIndex = 1;
+            this.Add_CorrectionEditor.Text = "添削エディタ起動";
+            this.Add_CorrectionEditor.UseVisualStyleBackColor = true;
+            this.Add_CorrectionEditor.Click += new System.EventHandler(this.Add_CorrectionEditor_Click);
             // 
-            // listBox1
+            // pictureBox1
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(3, 83);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(839, 88);
-            this.listBox1.TabIndex = 1;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox1.Image = global::Gathers.Properties.Resources.スライド1;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 132);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 3, 200, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(130, 186);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainTab
             // 
@@ -225,10 +247,11 @@
             // 
             // share_sourcecode
             // 
+            this.share_sourcecode.Controls.Add(this.button4);
             this.share_sourcecode.Controls.Add(this.soucecode_datalist);
             this.share_sourcecode.Controls.Add(this.pull_sourcecode);
             this.share_sourcecode.Controls.Add(this.create_share_sourcecode);
-            this.share_sourcecode.Controls.Add(this.textBox3);
+            this.share_sourcecode.Controls.Add(this.search_sourcecode);
             this.share_sourcecode.Controls.Add(this.checkBox1);
             this.share_sourcecode.Controls.Add(this.label7);
             this.share_sourcecode.Location = new System.Drawing.Point(4, 22);
@@ -239,18 +262,30 @@
             this.share_sourcecode.Text = "ソースコード共有";
             this.share_sourcecode.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.Location = new System.Drawing.Point(699, 482);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(113, 30);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "メインページへ戻る";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // soucecode_datalist
             // 
             this.soucecode_datalist.AllowUserToAddRows = false;
             this.soucecode_datalist.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.soucecode_datalist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.soucecode_datalist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle73.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.soucecode_datalist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle73;
             this.soucecode_datalist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.soucecode_datalist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.S_Address,
@@ -259,15 +294,15 @@
             this.User_id,
             this.S_Date,
             this.showbtn});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.soucecode_datalist.DefaultCellStyle = dataGridViewCellStyle6;
-            this.soucecode_datalist.Location = new System.Drawing.Point(41, 70);
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.soucecode_datalist.DefaultCellStyle = dataGridViewCellStyle78;
+            this.soucecode_datalist.Location = new System.Drawing.Point(47, 70);
             this.soucecode_datalist.Name = "soucecode_datalist";
             this.soucecode_datalist.ReadOnly = true;
             this.soucecode_datalist.RowTemplate.Height = 21;
@@ -285,8 +320,8 @@
             // S_Comment
             // 
             this.S_Comment.DataPropertyName = "S_Comment";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.S_Comment.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Comment.DefaultCellStyle = dataGridViewCellStyle74;
             this.S_Comment.HeaderText = "タイトル";
             this.S_Comment.Name = "S_Comment";
             this.S_Comment.ReadOnly = true;
@@ -295,8 +330,8 @@
             // S_Language
             // 
             this.S_Language.DataPropertyName = "S_Language";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.S_Language.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Language.DefaultCellStyle = dataGridViewCellStyle75;
             this.S_Language.HeaderText = "言語";
             this.S_Language.Name = "S_Language";
             this.S_Language.ReadOnly = true;
@@ -304,8 +339,8 @@
             // User_id
             // 
             this.User_id.DataPropertyName = "User_id";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.User_id.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.User_id.DefaultCellStyle = dataGridViewCellStyle76;
             this.User_id.HeaderText = "投稿者";
             this.User_id.Name = "User_id";
             this.User_id.ReadOnly = true;
@@ -314,8 +349,8 @@
             // S_Date
             // 
             this.S_Date.DataPropertyName = "S_Date";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.S_Date.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Date.DefaultCellStyle = dataGridViewCellStyle77;
             this.S_Date.HeaderText = "日付";
             this.S_Date.Name = "S_Date";
             this.S_Date.ReadOnly = true;
@@ -332,7 +367,8 @@
             // 
             // pull_sourcecode
             // 
-            this.pull_sourcecode.Location = new System.Drawing.Point(150, 34);
+            this.pull_sourcecode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pull_sourcecode.Location = new System.Drawing.Point(171, 26);
             this.pull_sourcecode.Name = "pull_sourcecode";
             this.pull_sourcecode.Size = new System.Drawing.Size(78, 30);
             this.pull_sourcecode.TabIndex = 7;
@@ -342,7 +378,8 @@
             // 
             // create_share_sourcecode
             // 
-            this.create_share_sourcecode.Location = new System.Drawing.Point(234, 34);
+            this.create_share_sourcecode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.create_share_sourcecode.Location = new System.Drawing.Point(255, 26);
             this.create_share_sourcecode.Name = "create_share_sourcecode";
             this.create_share_sourcecode.Size = new System.Drawing.Size(69, 30);
             this.create_share_sourcecode.TabIndex = 6;
@@ -350,19 +387,21 @@
             this.create_share_sourcecode.UseVisualStyleBackColor = true;
             this.create_share_sourcecode.Click += new System.EventHandler(this.create_share_sourcecode_Click);
             // 
-            // textBox3
+            // search_sourcecode
             // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textBox3.Location = new System.Drawing.Point(522, 36);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 19);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.Text = "ソースコードを検索する";
+            this.search_sourcecode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.search_sourcecode.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.search_sourcecode.Location = new System.Drawing.Point(545, 32);
+            this.search_sourcecode.Name = "search_sourcecode";
+            this.search_sourcecode.Size = new System.Drawing.Size(228, 19);
+            this.search_sourcecode.TabIndex = 5;
+            this.search_sourcecode.Text = "ソースコードを検索する";
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(311, 40);
+            this.checkBox1.Location = new System.Drawing.Point(330, 34);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(209, 16);
             this.checkBox1.TabIndex = 4;
@@ -371,9 +410,10 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(18, 40);
+            this.label7.Location = new System.Drawing.Point(44, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 16);
             this.label7.TabIndex = 1;
@@ -381,6 +421,7 @@
             // 
             // reference
             // 
+            this.reference.Controls.Add(this.ReturnToMainPage);
             this.reference.Controls.Add(this.create_new_ref);
             this.reference.Controls.Add(this.search_box);
             this.reference.Controls.Add(this.create_own_ref);
@@ -394,20 +435,32 @@
             this.reference.Text = "リファレンス共有";
             this.reference.UseVisualStyleBackColor = true;
             // 
+            // ReturnToMainPage
+            // 
+            this.ReturnToMainPage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ReturnToMainPage.Location = new System.Drawing.Point(681, 488);
+            this.ReturnToMainPage.Name = "ReturnToMainPage";
+            this.ReturnToMainPage.Size = new System.Drawing.Size(113, 30);
+            this.ReturnToMainPage.TabIndex = 7;
+            this.ReturnToMainPage.Text = "メインページへ戻る";
+            this.ReturnToMainPage.UseVisualStyleBackColor = true;
+            this.ReturnToMainPage.Click += new System.EventHandler(this.button1_Click);
+            // 
             // create_new_ref
             // 
-            this.create_new_ref.Location = new System.Drawing.Point(198, 34);
+            this.create_new_ref.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.create_new_ref.Location = new System.Drawing.Point(235, 32);
             this.create_new_ref.Name = "create_new_ref";
             this.create_new_ref.Size = new System.Drawing.Size(96, 30);
             this.create_new_ref.TabIndex = 6;
             this.create_new_ref.Text = "新規作成";
             this.create_new_ref.UseVisualStyleBackColor = true;
-            this.create_new_ref.Click += new System.EventHandler(this.create_new_ref_Click);
             // 
             // search_box
             // 
+            this.search_box.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.search_box.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.search_box.Location = new System.Drawing.Point(522, 36);
+            this.search_box.Location = new System.Drawing.Point(546, 38);
             this.search_box.Name = "search_box";
             this.search_box.Size = new System.Drawing.Size(228, 19);
             this.search_box.TabIndex = 5;
@@ -415,8 +468,9 @@
             // 
             // create_own_ref
             // 
+            this.create_own_ref.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.create_own_ref.AutoSize = true;
-            this.create_own_ref.Location = new System.Drawing.Point(311, 40);
+            this.create_own_ref.Location = new System.Drawing.Point(337, 40);
             this.create_own_ref.Name = "create_own_ref";
             this.create_own_ref.Size = new System.Drawing.Size(203, 16);
             this.create_own_ref.TabIndex = 4;
@@ -425,7 +479,8 @@
             // 
             // ref_share_list
             // 
-            this.ref_share_list.Location = new System.Drawing.Point(21, 74);
+            this.ref_share_list.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ref_share_list.Location = new System.Drawing.Point(65, 74);
             this.ref_share_list.Name = "ref_share_list";
             this.ref_share_list.Size = new System.Drawing.Size(729, 408);
             this.ref_share_list.TabIndex = 2;
@@ -433,9 +488,10 @@
             // 
             // ref_share_label
             // 
+            this.ref_share_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ref_share_label.AutoSize = true;
             this.ref_share_label.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.ref_share_label.Location = new System.Drawing.Point(18, 40);
+            this.ref_share_label.Location = new System.Drawing.Point(62, 37);
             this.ref_share_label.Name = "ref_share_label";
             this.ref_share_label.Size = new System.Drawing.Size(167, 16);
             this.ref_share_label.TabIndex = 1;
@@ -458,8 +514,9 @@
             // 
             // Question_search
             // 
+            this.Question_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Question_search.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.Question_search.Location = new System.Drawing.Point(522, 36);
+            this.Question_search.Location = new System.Drawing.Point(479, 38);
             this.Question_search.Name = "Question_search";
             this.Question_search.Size = new System.Drawing.Size(228, 19);
             this.Question_search.TabIndex = 5;
@@ -467,8 +524,9 @@
             // 
             // Question_own_check
             // 
+            this.Question_own_check.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Question_own_check.AutoSize = true;
-            this.Question_own_check.Location = new System.Drawing.Point(311, 40);
+            this.Question_own_check.Location = new System.Drawing.Point(295, 40);
             this.Question_own_check.Name = "Question_own_check";
             this.Question_own_check.Size = new System.Drawing.Size(178, 16);
             this.Question_own_check.TabIndex = 4;
@@ -477,7 +535,8 @@
             // 
             // Question_create
             // 
-            this.Question_create.Location = new System.Drawing.Point(198, 34);
+            this.Question_create.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Question_create.Location = new System.Drawing.Point(193, 35);
             this.Question_create.Name = "Question_create";
             this.Question_create.Size = new System.Drawing.Size(96, 30);
             this.Question_create.TabIndex = 3;
@@ -487,7 +546,8 @@
             // 
             // question_list
             // 
-            this.question_list.Location = new System.Drawing.Point(21, 74);
+            this.question_list.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.question_list.Location = new System.Drawing.Point(65, 74);
             this.question_list.Name = "question_list";
             this.question_list.Size = new System.Drawing.Size(729, 408);
             this.question_list.TabIndex = 2;
@@ -495,9 +555,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(18, 40);
+            this.label3.Location = new System.Drawing.Point(62, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 1;
@@ -542,10 +603,11 @@
             // 
             // ref_inf_gbox
             // 
+            this.ref_inf_gbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ref_inf_gbox.Controls.Add(this.ref_genre_label);
             this.ref_inf_gbox.Controls.Add(this.ref_title_label);
             this.ref_inf_gbox.Controls.Add(this.ref_title_box);
-            this.ref_inf_gbox.Location = new System.Drawing.Point(21, 353);
+            this.ref_inf_gbox.Location = new System.Drawing.Point(65, 355);
             this.ref_inf_gbox.Name = "ref_inf_gbox";
             this.ref_inf_gbox.Size = new System.Drawing.Size(729, 127);
             this.ref_inf_gbox.TabIndex = 5;
@@ -579,7 +641,8 @@
             // 
             // ref_cancel_btn
             // 
-            this.ref_cancel_btn.Location = new System.Drawing.Point(402, 34);
+            this.ref_cancel_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ref_cancel_btn.Location = new System.Drawing.Point(488, 35);
             this.ref_cancel_btn.Name = "ref_cancel_btn";
             this.ref_cancel_btn.Size = new System.Drawing.Size(96, 30);
             this.ref_cancel_btn.TabIndex = 4;
@@ -588,7 +651,8 @@
             // 
             // ref_upload_btn
             // 
-            this.ref_upload_btn.Location = new System.Drawing.Point(198, 34);
+            this.ref_upload_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ref_upload_btn.Location = new System.Drawing.Point(284, 35);
             this.ref_upload_btn.Name = "ref_upload_btn";
             this.ref_upload_btn.Size = new System.Drawing.Size(96, 30);
             this.ref_upload_btn.TabIndex = 3;
@@ -597,7 +661,8 @@
             // 
             // ref_save_btn
             // 
-            this.ref_save_btn.Location = new System.Drawing.Point(300, 34);
+            this.ref_save_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ref_save_btn.Location = new System.Drawing.Point(386, 35);
             this.ref_save_btn.Name = "ref_save_btn";
             this.ref_save_btn.Size = new System.Drawing.Size(96, 30);
             this.ref_save_btn.TabIndex = 2;
@@ -606,9 +671,10 @@
             // 
             // ref_new_label
             // 
+            this.ref_new_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ref_new_label.AutoSize = true;
             this.ref_new_label.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ref_new_label.Location = new System.Drawing.Point(21, 40);
+            this.ref_new_label.Location = new System.Drawing.Point(62, 40);
             this.ref_new_label.Name = "ref_new_label";
             this.ref_new_label.Size = new System.Drawing.Size(161, 16);
             this.ref_new_label.TabIndex = 1;
@@ -617,7 +683,8 @@
             // ref_body_box
             // 
             this.ref_body_box.AllowDrop = true;
-            this.ref_body_box.Location = new System.Drawing.Point(21, 74);
+            this.ref_body_box.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ref_body_box.Location = new System.Drawing.Point(65, 74);
             this.ref_body_box.Multiline = true;
             this.ref_body_box.Name = "ref_body_box";
             this.ref_body_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -642,10 +709,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(21, 353);
+            this.groupBox1.Location = new System.Drawing.Point(65, 358);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(729, 127);
             this.groupBox1.TabIndex = 5;
@@ -679,7 +747,8 @@
             // 
             // create_question_cancel
             // 
-            this.create_question_cancel.Location = new System.Drawing.Point(402, 34);
+            this.create_question_cancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.create_question_cancel.Location = new System.Drawing.Point(470, 33);
             this.create_question_cancel.Name = "create_question_cancel";
             this.create_question_cancel.Size = new System.Drawing.Size(96, 30);
             this.create_question_cancel.TabIndex = 4;
@@ -689,7 +758,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(198, 34);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.Location = new System.Drawing.Point(266, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 30);
             this.button2.TabIndex = 3;
@@ -698,7 +768,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(300, 34);
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.Location = new System.Drawing.Point(368, 33);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(96, 30);
             this.button3.TabIndex = 2;
@@ -707,9 +778,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(21, 40);
+            this.label6.Location = new System.Drawing.Point(62, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 16);
             this.label6.TabIndex = 1;
@@ -718,7 +790,8 @@
             // textBox2
             // 
             this.textBox2.AllowDrop = true;
-            this.textBox2.Location = new System.Drawing.Point(21, 74);
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2.Location = new System.Drawing.Point(65, 74);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -744,7 +817,8 @@
             // 
             // add_file
             // 
-            this.add_file.Location = new System.Drawing.Point(402, 34);
+            this.add_file.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.add_file.Location = new System.Drawing.Point(502, 25);
             this.add_file.Name = "add_file";
             this.add_file.Size = new System.Drawing.Size(96, 30);
             this.add_file.TabIndex = 6;
@@ -758,8 +832,8 @@
             this.groupBox2.Controls.Add(this.set_file);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Location = new System.Drawing.Point(21, 353);
+            this.groupBox2.Controls.Add(this.title);
+            this.groupBox2.Location = new System.Drawing.Point(65, 355);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(729, 127);
             this.groupBox2.TabIndex = 5;
@@ -800,26 +874,27 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "タイトル :";
             // 
-            // textBox4
+            // title
             // 
-            this.textBox4.Location = new System.Drawing.Point(70, 28);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(161, 19);
-            this.textBox4.TabIndex = 0;
+            this.title.Location = new System.Drawing.Point(70, 28);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(161, 19);
+            this.title.TabIndex = 0;
             // 
             // cancel_share_sourcecode
             // 
-            this.cancel_share_sourcecode.Location = new System.Drawing.Point(504, 35);
+            this.cancel_share_sourcecode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cancel_share_sourcecode.Location = new System.Drawing.Point(604, 25);
             this.cancel_share_sourcecode.Name = "cancel_share_sourcecode";
             this.cancel_share_sourcecode.Size = new System.Drawing.Size(96, 30);
             this.cancel_share_sourcecode.TabIndex = 4;
             this.cancel_share_sourcecode.Text = "キャンセル";
             this.cancel_share_sourcecode.UseVisualStyleBackColor = true;
-            this.cancel_share_sourcecode.Click += new System.EventHandler(this.cancel_share_sourcecode_Click);
             // 
             // save_sourcecode
             // 
-            this.save_sourcecode.Location = new System.Drawing.Point(198, 34);
+            this.save_sourcecode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.save_sourcecode.Location = new System.Drawing.Point(298, 25);
             this.save_sourcecode.Name = "save_sourcecode";
             this.save_sourcecode.Size = new System.Drawing.Size(96, 30);
             this.save_sourcecode.TabIndex = 3;
@@ -829,7 +904,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(300, 34);
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button5.Location = new System.Drawing.Point(400, 25);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 30);
             this.button5.TabIndex = 2;
@@ -838,9 +914,10 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(21, 40);
+            this.label10.Location = new System.Drawing.Point(62, 30);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(169, 16);
             this.label10.TabIndex = 1;
@@ -849,7 +926,8 @@
             // sourcecode_readme
             // 
             this.sourcecode_readme.AllowDrop = true;
-            this.sourcecode_readme.Location = new System.Drawing.Point(21, 74);
+            this.sourcecode_readme.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sourcecode_readme.Location = new System.Drawing.Point(65, 74);
             this.sourcecode_readme.Multiline = true;
             this.sourcecode_readme.Name = "sourcecode_readme";
             this.sourcecode_readme.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -881,13 +959,22 @@
             // cloneToolStripMenuItem
             // 
             this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
-            this.cloneToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.cloneToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.cloneToolStripMenuItem.Text = "clone";
             this.cloneToolStripMenuItem.Click += new System.EventHandler(this.cloneToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(1, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(903, 29);
+            this.panel1.TabIndex = 7;
             // 
             // MainFrame
             // 
@@ -896,14 +983,16 @@
             this.ClientSize = new System.Drawing.Size(867, 589);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.MainTab);
+            this.Controls.Add(this.panel1);
             this.Name = "MainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Gathers\'";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPage.ResumeLayout(false);
-            this.MainPage.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MainTab.ResumeLayout(false);
             this.share_sourcecode.ResumeLayout(false);
             this.share_sourcecode.PerformLayout();
@@ -937,10 +1026,7 @@
         private System.Windows.Forms.TabPage MainPage;
         private System.Windows.Forms.TabControl MainTab;
         private System.Windows.Forms.Button Add_CorrectionEditor;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.NotifyIcon mainnotify;
         private System.Windows.Forms.TabPage CorrectionEditor;
         private System.Windows.Forms.Button Remove_CorrectionEditor;
@@ -980,14 +1066,14 @@
         private System.Windows.Forms.Button create_new_ref;
         private System.Windows.Forms.TabPage share_sourcecode;
         private System.Windows.Forms.Button create_share_sourcecode;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox search_sourcecode;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage create_share_sourcecodeTab;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox title;
         private System.Windows.Forms.Button cancel_share_sourcecode;
         private System.Windows.Forms.Button save_sourcecode;
         private System.Windows.Forms.Button button5;
@@ -1006,6 +1092,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn S_Date;
         private System.Windows.Forms.DataGridViewButtonColumn showbtn;
         private System.Windows.Forms.ToolStripMenuItem cloneToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ReturnToMainPage;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

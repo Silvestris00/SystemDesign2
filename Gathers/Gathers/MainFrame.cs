@@ -51,5 +51,27 @@ namespace Gathers
         {
             this.MainTab.TabPages.Remove(CorrectionEditor);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.MainTab.SelectTab(share_sourcecode);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.MainTab.SelectTab(reference);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.MainTab.SelectTab(MainPage);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.MainTab.SelectTab(MainPage);
+        }
+
+
     }
 }
