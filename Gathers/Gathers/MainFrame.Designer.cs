@@ -29,19 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Add_CorrectionEditor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.share_sourcecode = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -58,11 +64,17 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.reference = new System.Windows.Forms.TabPage();
+            this.ref_data = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ReturnToMainPage = new System.Windows.Forms.Button();
             this.create_new_ref = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
             this.create_own_ref = new System.Windows.Forms.CheckBox();
-            this.ref_share_list = new System.Windows.Forms.ListView();
             this.ref_share_label = new System.Windows.Forms.Label();
             this.Question = new System.Windows.Forms.TabPage();
             this.Question_search = new System.Windows.Forms.TextBox();
@@ -74,6 +86,7 @@
             this.Remove_CorrectionEditor = new System.Windows.Forms.Button();
             this.reference_create = new System.Windows.Forms.TabPage();
             this.ref_inf_gbox = new System.Windows.Forms.GroupBox();
+            this.ref_genre = new System.Windows.Forms.TextBox();
             this.ref_genre_label = new System.Windows.Forms.Label();
             this.ref_title_label = new System.Windows.Forms.Label();
             this.ref_title_box = new System.Windows.Forms.TextBox();
@@ -113,12 +126,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.MainTab.SuspendLayout();
             this.share_sourcecode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soucecode_datalist)).BeginInit();
             this.reference.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ref_data)).BeginInit();
             this.Question.SuspendLayout();
             this.CorrectionEditor.SuspendLayout();
             this.reference_create.SuspendLayout();
@@ -162,18 +176,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(858, 536);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox2.Image = global::Gathers.Properties.Resources.スライド2;
-            this.pictureBox2.Location = new System.Drawing.Point(550, 127);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(120, 3, 3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(132, 197);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
@@ -225,6 +227,18 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox2.Image = global::Gathers.Properties.Resources.スライド2;
+            this.pictureBox2.Location = new System.Drawing.Point(550, 127);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(120, 3, 3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(132, 197);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // MainTab
             // 
@@ -278,14 +292,14 @@
             this.soucecode_datalist.AllowUserToAddRows = false;
             this.soucecode_datalist.AllowUserToDeleteRows = false;
             this.soucecode_datalist.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle73.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle73.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.soucecode_datalist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.soucecode_datalist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.soucecode_datalist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.soucecode_datalist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.S_Address,
@@ -294,14 +308,14 @@
             this.User_id,
             this.S_Date,
             this.showbtn});
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle78.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.soucecode_datalist.DefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.soucecode_datalist.DefaultCellStyle = dataGridViewCellStyle6;
             this.soucecode_datalist.Location = new System.Drawing.Point(47, 70);
             this.soucecode_datalist.Name = "soucecode_datalist";
             this.soucecode_datalist.ReadOnly = true;
@@ -320,8 +334,8 @@
             // S_Comment
             // 
             this.S_Comment.DataPropertyName = "S_Comment";
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.S_Comment.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Comment.DefaultCellStyle = dataGridViewCellStyle2;
             this.S_Comment.HeaderText = "タイトル";
             this.S_Comment.Name = "S_Comment";
             this.S_Comment.ReadOnly = true;
@@ -330,8 +344,8 @@
             // S_Language
             // 
             this.S_Language.DataPropertyName = "S_Language";
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.S_Language.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Language.DefaultCellStyle = dataGridViewCellStyle3;
             this.S_Language.HeaderText = "言語";
             this.S_Language.Name = "S_Language";
             this.S_Language.ReadOnly = true;
@@ -339,8 +353,8 @@
             // User_id
             // 
             this.User_id.DataPropertyName = "User_id";
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.User_id.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.User_id.DefaultCellStyle = dataGridViewCellStyle4;
             this.User_id.HeaderText = "投稿者";
             this.User_id.Name = "User_id";
             this.User_id.ReadOnly = true;
@@ -349,8 +363,8 @@
             // S_Date
             // 
             this.S_Date.DataPropertyName = "S_Date";
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.S_Date.DefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.S_Date.DefaultCellStyle = dataGridViewCellStyle5;
             this.S_Date.HeaderText = "日付";
             this.S_Date.Name = "S_Date";
             this.S_Date.ReadOnly = true;
@@ -421,11 +435,11 @@
             // 
             // reference
             // 
+            this.reference.Controls.Add(this.ref_data);
             this.reference.Controls.Add(this.ReturnToMainPage);
             this.reference.Controls.Add(this.create_new_ref);
             this.reference.Controls.Add(this.search_box);
             this.reference.Controls.Add(this.create_own_ref);
-            this.reference.Controls.Add(this.ref_share_list);
             this.reference.Controls.Add(this.ref_share_label);
             this.reference.Location = new System.Drawing.Point(4, 22);
             this.reference.Name = "reference";
@@ -434,6 +448,97 @@
             this.reference.TabIndex = 8;
             this.reference.Text = "リファレンス共有";
             this.reference.UseVisualStyleBackColor = true;
+            // 
+            // ref_data
+            // 
+            this.ref_data.AllowUserToAddRows = false;
+            this.ref_data.AllowUserToDeleteRows = false;
+            this.ref_data.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ref_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.ref_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ref_data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewButtonColumn1});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ref_data.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ref_data.Location = new System.Drawing.Point(47, 65);
+            this.ref_data.Name = "ref_data";
+            this.ref_data.ReadOnly = true;
+            this.ref_data.RowTemplate.Height = 21;
+            this.ref_data.Size = new System.Drawing.Size(765, 406);
+            this.ref_data.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "R_Address";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ハッシュ値";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "R_Comment";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn2.HeaderText = "タイトル";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "R_Language";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn3.HeaderText = "言語";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "User_id";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn4.HeaderText = "投稿者";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "R_Date";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn5.HeaderText = "日付";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewButtonColumn1.Text = "閲覧";
+            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             // 
             // ReturnToMainPage
             // 
@@ -455,6 +560,7 @@
             this.create_new_ref.TabIndex = 6;
             this.create_new_ref.Text = "新規作成";
             this.create_new_ref.UseVisualStyleBackColor = true;
+            this.create_new_ref.Click += new System.EventHandler(this.create_new_ref_Click);
             // 
             // search_box
             // 
@@ -476,15 +582,6 @@
             this.create_own_ref.TabIndex = 4;
             this.create_own_ref.Text = "自分で作成したリファレンスのみを表示";
             this.create_own_ref.UseVisualStyleBackColor = true;
-            // 
-            // ref_share_list
-            // 
-            this.ref_share_list.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ref_share_list.Location = new System.Drawing.Point(65, 74);
-            this.ref_share_list.Name = "ref_share_list";
-            this.ref_share_list.Size = new System.Drawing.Size(729, 408);
-            this.ref_share_list.TabIndex = 2;
-            this.ref_share_list.UseCompatibleStateImageBehavior = false;
             // 
             // ref_share_label
             // 
@@ -604,6 +701,7 @@
             // ref_inf_gbox
             // 
             this.ref_inf_gbox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ref_inf_gbox.Controls.Add(this.ref_genre);
             this.ref_inf_gbox.Controls.Add(this.ref_genre_label);
             this.ref_inf_gbox.Controls.Add(this.ref_title_label);
             this.ref_inf_gbox.Controls.Add(this.ref_title_box);
@@ -613,6 +711,13 @@
             this.ref_inf_gbox.TabIndex = 5;
             this.ref_inf_gbox.TabStop = false;
             this.ref_inf_gbox.Text = "リファレンス情報";
+            // 
+            // ref_genre
+            // 
+            this.ref_genre.Location = new System.Drawing.Point(347, 28);
+            this.ref_genre.Name = "ref_genre";
+            this.ref_genre.Size = new System.Drawing.Size(161, 19);
+            this.ref_genre.TabIndex = 3;
             // 
             // ref_genre_label
             // 
@@ -658,6 +763,7 @@
             this.ref_upload_btn.TabIndex = 3;
             this.ref_upload_btn.Text = "保存/公開";
             this.ref_upload_btn.UseVisualStyleBackColor = true;
+            this.ref_upload_btn.Click += new System.EventHandler(this.ref_upload_btn_Click);
             // 
             // ref_save_btn
             // 
@@ -828,6 +934,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.genre);
             this.groupBox2.Controls.Add(this.set_file);
             this.groupBox2.Controls.Add(this.label8);
@@ -959,7 +1066,7 @@
             // cloneToolStripMenuItem
             // 
             this.cloneToolStripMenuItem.Name = "cloneToolStripMenuItem";
-            this.cloneToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.cloneToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.cloneToolStripMenuItem.Text = "clone";
             this.cloneToolStripMenuItem.Click += new System.EventHandler(this.cloneToolStripMenuItem_Click);
             // 
@@ -991,14 +1098,15 @@
             this.MainPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.MainTab.ResumeLayout(false);
             this.share_sourcecode.ResumeLayout(false);
             this.share_sourcecode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soucecode_datalist)).EndInit();
             this.reference.ResumeLayout(false);
             this.reference.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ref_data)).EndInit();
             this.Question.ResumeLayout(false);
             this.Question.PerformLayout();
             this.CorrectionEditor.ResumeLayout(false);
@@ -1045,7 +1153,6 @@
         private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
         private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.CheckBox create_own_ref;
-        private System.Windows.Forms.ListView ref_share_list;
         private System.Windows.Forms.Label ref_share_label;
         private System.Windows.Forms.TabPage Question;
         private System.Windows.Forms.TextBox Question_search;
@@ -1099,6 +1206,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button ReturnToMainPage;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView ref_data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.TextBox ref_genre;
     }
 }
 

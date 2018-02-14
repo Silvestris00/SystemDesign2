@@ -1,0 +1,17 @@
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\Gathers.exe.config
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\Gathers.exe
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\Gathers.pdb
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\EntityFramework.dll
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\System.Data.SQLite.dll
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\EntityFramework.xml
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\bin\Release\System.Data.SQLite.xml
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Release\Gathers.MainFrame.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Release\Gathers.Properties.Resources.resources
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Release\Gathers.csproj.GenerateResource.Cache
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Release\Gathers.exe
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Release\Gathers.pdb
+C:\Users\NEC-PCuser\Desktop\develop\SystemDesign2\Gathers\Gathers\obj\Release\Gathers.csprojResolveAssemblyReference.cache

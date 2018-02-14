@@ -13,7 +13,7 @@ namespace Gathers
         static private String databaseFilePath = master + "/database/database/Gathers.db";
         private String directoryplace = master+"/sourcecode/sourcecode";
         private System.Diagnostics.Process pro = new System.Diagnostics.Process();
-        SQLiteConnection con;
+        SQLiteConnection con=new SQLiteConnection("Data Source=" + databaseFilePath);
         DataTable dataTable = new DataTable();
 
         // 初期化
@@ -27,7 +27,6 @@ namespace Gathers
             //pro.StartInfo.RedirectStandardInput = false;
             //ウィンドウを表示しないようにする
             pro.StartInfo.CreateNoWindow = false;
-            con = new SQLiteConnection("Data Source=" + databaseFilePath);
             load_database();
         }
 
@@ -36,9 +35,11 @@ namespace Gathers
             // 閲覧ボタン列かどうかを確認
             if (e.ColumnIndex == this.soucecode_datalist.Columns["showbtn"].Index)
             {
+                
                 String filehash = soucecode_datalist.Rows[e.RowIndex].Cells[1].Value.ToString();
                 String genre = soucecode_datalist.Rows[e.RowIndex].Cells[3].Value.ToString();
                 String date = soucecode_datalist.Rows[e.RowIndex].Cells[5].Value.ToString().Insert(4, "_");
+                MessageBox.Show(directoryplace + "/" + genre + "/" + date + "/" + filehash);
                 if (Directory.Exists(directoryplace + "/" + genre + "/" + date + "/" + filehash))
                 {
                     System.Diagnostics.Process.Start("explorer.exe", directoryplace + "/" + genre + "/" + date + "/" + filehash);
@@ -47,6 +48,7 @@ namespace Gathers
                 {
                     MessageBox.Show("ファイルが存在しません");
                 }
+               
             }
         }
 
@@ -67,14 +69,18 @@ namespace Gathers
             {
                 Directory.CreateDirectory(master);
             }
-            String[] gitclonecommand = { @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git && exit ",
+            String[] gitclonecommand = { @" cd " + master + "&& git clone ssh://gathers:/home/gathers/test.git && exit ",
                                          @" cd " + master + "&& rename test database && exit ",
                                          @" cd " + master + "/database && git checkout -b database origin/database && exit ",
-                                         @" cd " + master + "&& git clone gathers@192.168.11.2:/home/gathers/test.git && exit ",
+                                         @" cd " + master + "&& git clone ssh://gathers:/home/gathers/test.git && exit ",
                                          @" cd " + master + "&& rename test sourcecode && exit ",
-                                         @" cd " + master + "/sourcecode && git checkout -b sourcecode origin/sourcecode && exit "};
+                                         @" cd " + master + "/sourcecode && git checkout -b sourcecode origin/sourcecode && exit ",
+                                         @" cd " + master + "&& git clone ssh://gathers:/home/gathers/test.git && exit ",
+                                         @" cd " + master + "&& rename test reference && exit ",
+                                         @" cd " + master + "/reference && git checkout -b reference origin/reference && exit "};
             run_cmd(gitclonecommand);
             load_database();
+            ref_load_database();
         }
 
         private void pull_sourcecode_Click(object sender, EventArgs e)
@@ -116,15 +122,12 @@ namespace Gathers
             String sourcecodeGenre = genre.Text;
             String userid = "guest";
             String hash = hashGenerate();
-            if (sourcecodeGenre!="") {
+            if (sourcecodeGenre!="" || fileName != null) {
                 directoryplace += "/"+ sourcecodeGenre + "/" + DateTime.Now.ToString("yyyy_MM") + "/" + hash;
                 if (!Directory.Exists(directoryplace))
                 {
                     Directory.CreateDirectory(directoryplace);
-                }
-                copy();
-                if (fileName != null)
-                {
+                    copy();
                     make_info();
                     run_cmd(@" cd " + master + "/database && git pull && exit ");
                     using (SQLiteCommand cmd = con.CreateCommand())
@@ -145,17 +148,18 @@ namespace Gathers
                     set_file.Text = "添付ファイル :  ";
                     genre.Text = "";
                     title.Text = "";
+                    directoryplace = master + "/sourcecode/sourcecode";
                     this.MainTab.TabPages.Remove(create_share_sourcecodeTab);
                     this.MainTab.SelectTab(MainPage);
                 }
                 else
                 {
-                    MessageBox.Show("ソースコードが添付されていません!");
+                    MessageBox.Show("既にこのソースコードは登録されています");
                 }
             }
             else
             {
-                MessageBox.Show("ジャンルが指定されていません!");
+                MessageBox.Show("必要箇所が記入されていません!");
             }
         }
 

@@ -32,8 +32,7 @@ namespace Gathers
             this.MainTab.Size = new Size(Display_Width, Display_Height);
             this.MainTab.SizeMode = TabSizeMode.Normal;
             this.Controls.Add(MainTab);
-            Initialize_ref_share_list();
-            Initialize_question_list();
+            Initialize_ref_list();
             Initialize_sourcecode_list();
             this.MainTab.TabPages.Remove(CorrectionEditor);
             this.MainTab.TabPages.Remove(reference_create);
@@ -71,7 +70,5 @@ namespace Gathers
         {
             this.MainTab.SelectTab(MainPage);
         }
-
-
     }
 }
